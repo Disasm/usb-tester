@@ -425,7 +425,7 @@ Wire Wire Line
 	10300 1100 10300 1200
 Connection ~ 9600 1100
 $Comp
-L parts:STMPS2151STR U?
+L ic:STMPS2151STR U?
 U 1 1 5E3CBD43
 P 2000 5400
 F 0 "U?" H 2000 5765 50  0000 C CNN
@@ -436,7 +436,7 @@ F 3 "https://www.st.com/resource/en/datasheet/stmps2141.pdf" H 2000 5400 50  000
 	1    0    0    -1  
 $EndComp
 $Comp
-L parts:FSUSB30MUX U?
+L ic:FSUSB30MUX U?
 U 1 1 5E3CC2D2
 P 6150 5150
 F 0 "U?" H 6150 5881 50  0000 C CNN
