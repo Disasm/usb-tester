@@ -1,0 +1,13 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP FSUSB30MUX
+D Two-Port, High-Speed USB 2.0 Switch
+F https://www.mouser.com/datasheet/2/149/FSUSB30-1010253.pdf
+$ENDCMP
+#
+$CMP STMPS2151STR
+D Single channel power switch
+F https://www.st.com/resource/en/datasheet/stmps2141.pdf
+$ENDCMP
+#
+#End Doc Library
