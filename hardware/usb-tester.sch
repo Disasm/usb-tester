@@ -14,17 +14,6 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L MCU_ST_STM32F0:STM32F042F6Px U?
-U 1 1 5E3FC4E2
-P 2500 2050
-F 0 "U?" H 2050 1300 50  0000 C CNN
-F 1 "STM32F042F6Px" H 2700 1300 50  0000 C CNN
-F 2 "Package_SO:TSSOP-20_4.4x6.5mm_P0.65mm" H 2000 1350 50  0001 R CNN
-F 3 "http://www.st.com/st-web-ui/static/active/en/resource/technical/document/datasheet/DM00105814.pdf" H 2500 2050 50  0001 C CNN
-	1    2500 2050
-	1    0    0    -1  
-$EndComp
-$Comp
 L Power_Protection:USBLC6-2SC6 U?
 U 1 1 5E3FD4F5
 P 10300 1700
@@ -40,21 +29,10 @@ L Connector:USB_B_Micro J?
 U 1 1 5E3FE1FE
 P 9200 1300
 F 0 "J?" H 9200 1750 50  0000 C CNN
-F 1 "PROGRAM" H 9200 1650 50  0000 C CNN
+F 1 "TARGET" H 9200 1650 50  0000 C CNN
 F 2 "" H 9350 1250 50  0001 C CNN
 F 3 "~" H 9350 1250 50  0001 C CNN
 	1    9200 1300
-	1    0    0    -1  
-$EndComp
-$Comp
-L Switch:SW_SPST SW?
-U 1 1 5E402487
-P 3600 1000
-F 0 "SW?" H 3600 1235 50  0000 C CNN
-F 1 "NEXT" H 3600 1144 50  0000 C CNN
-F 2 "" H 3600 1000 50  0001 C CNN
-F 3 "~" H 3600 1000 50  0001 C CNN
-	1    3600 1000
 	1    0    0    -1  
 $EndComp
 NoConn ~ 9500 1500
@@ -216,156 +194,33 @@ F 3 "http://www.ti.com/lit/ds/symlink/tlv1117.pdf" H 4850 1100 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Power_Protection:USBLC6-2SC6 U?
-U 1 1 5E443966
-P 12800 1700
-F 0 "U?" H 12550 2050 50  0000 C CNN
-F 1 "USBLC6-2SC6" H 13100 2050 50  0000 C CNN
-F 2 "Package_TO_SOT_SMD:SOT-23-6" H 12050 2100 50  0001 C CNN
-F 3 "http://www2.st.com/resource/en/datasheet/CD00050750.pdf" H 13000 2050 50  0001 C CNN
-	1    12800 1700
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector:USB_B_Micro J?
-U 1 1 5E443970
-P 11700 1300
-F 0 "J?" H 11700 1750 50  0000 C CNN
-F 1 "TEST" H 11700 1650 50  0000 C CNN
-F 2 "" H 11850 1250 50  0001 C CNN
-F 3 "~" H 11850 1250 50  0001 C CNN
-	1    11700 1300
-	1    0    0    -1  
-$EndComp
-NoConn ~ 12000 1500
-$Comp
-L power:GND #PWR?
-U 1 1 5E44397B
-P 11700 1900
-F 0 "#PWR?" H 11700 1650 50  0001 C CNN
-F 1 "GND" H 11705 1727 50  0000 C CNN
-F 2 "" H 11700 1900 50  0001 C CNN
-F 3 "" H 11700 1900 50  0001 C CNN
-	1    11700 1900
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	11700 1700 11700 1800
-Wire Wire Line
-	11700 1800 11600 1800
-Wire Wire Line
-	11600 1800 11600 1700
-Connection ~ 11700 1800
-Wire Wire Line
-	11700 1800 11700 1900
-Wire Wire Line
-	12800 1100 12800 1200
-Wire Wire Line
-	12000 1300 13400 1300
-Wire Wire Line
-	13400 1300 13400 1600
-Wire Wire Line
-	13400 1600 13300 1600
-Wire Wire Line
-	12000 1400 12200 1400
-Wire Wire Line
-	12200 1400 12200 1600
-Wire Wire Line
-	12200 1600 12300 1600
-Text Label 12300 1800 2    50   ~ 0
-USBT_DM
-Text Label 13300 1800 0    50   ~ 0
-USBT_DP
-$Comp
-L power:GND #PWR?
-U 1 1 5E4439A9
-P 12800 2300
-F 0 "#PWR?" H 12800 2050 50  0001 C CNN
-F 1 "GND" H 12805 2127 50  0000 C CNN
-F 2 "" H 12800 2300 50  0001 C CNN
-F 3 "" H 12800 2300 50  0001 C CNN
-	1    12800 2300
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	12800 2300 12800 2200
-Text Label 3100 2350 0    50   ~ 0
-USB_DM
-Text Label 3100 2450 0    50   ~ 0
-USB_DP
-Text Label 3100 2050 0    50   ~ 0
-SWDIO
-Text Label 3100 2150 0    50   ~ 0
-SWCLK
-Text Label 3100 1750 0    50   ~ 0
-T_RX
-Text Label 3100 1850 0    50   ~ 0
-T_TX
-$Comp
-L power:+3V3 #PWR?
-U 1 1 5E4504D1
-P 2300 1150
-F 0 "#PWR?" H 2300 1000 50  0001 C CNN
-F 1 "+3V3" H 2315 1323 50  0000 C CNN
-F 2 "" H 2300 1150 50  0001 C CNN
-F 3 "" H 2300 1150 50  0001 C CNN
-	1    2300 1150
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	2300 1150 2300 1250
-Wire Wire Line
-	2300 1250 2400 1250
-Wire Wire Line
-	2400 1250 2400 1350
-Connection ~ 2300 1250
-Wire Wire Line
-	2300 1250 2300 1350
-$Comp
-L power:GND #PWR?
-U 1 1 5E4530E4
-P 2300 2950
-F 0 "#PWR?" H 2300 2700 50  0001 C CNN
-F 1 "GND" H 2305 2777 50  0000 C CNN
-F 2 "" H 2300 2950 50  0001 C CNN
-F 3 "" H 2300 2950 50  0001 C CNN
-	1    2300 2950
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	2300 2950 2300 2850
-NoConn ~ 3100 2550
-NoConn ~ 3100 2650
-Text Label 1900 2550 2    50   ~ 0
-T_NRST
-$Comp
 L Connector_Generic:Conn_02x05_Odd_Even J?
 U 1 1 5E458FD1
-P 3550 4250
-F 0 "J?" H 3600 4667 50  0000 C CNN
-F 1 "Target 0" H 3600 4576 50  0000 C CNN
-F 2 "" H 3550 4250 50  0001 C CNN
-F 3 "~" H 3550 4250 50  0001 C CNN
-	1    3550 4250
+P 2550 3750
+F 0 "J?" H 2600 4167 50  0000 C CNN
+F 1 "Target 0" H 2600 4076 50  0000 C CNN
+F 2 "" H 2550 3750 50  0001 C CNN
+F 3 "~" H 2550 3750 50  0001 C CNN
+	1    2550 3750
 	1    0    0    -1  
 $EndComp
-Text Label 3850 4050 0    50   ~ 0
+Text Label 2850 3550 0    50   ~ 0
 T_USB_DP0
-Text Label 3350 4050 2    50   ~ 0
+Text Label 2350 3550 2    50   ~ 0
 T_USB_DM0
-Text Label 3850 4150 0    50   ~ 0
+Text Label 2850 3650 0    50   ~ 0
 GND
-Text Label 3850 4250 0    50   ~ 0
+Text Label 2850 3750 0    50   ~ 0
 T_CLK
-Text Label 3850 4350 0    50   ~ 0
+Text Label 2850 3850 0    50   ~ 0
 SWCLK
-Text Label 3350 4250 2    50   ~ 0
+Text Label 2350 3750 2    50   ~ 0
 T_NRST0
-Text Label 3350 4350 2    50   ~ 0
+Text Label 2350 3850 2    50   ~ 0
 T_SWDIO0
-Text Label 3350 4450 2    50   ~ 0
+Text Label 2350 3950 2    50   ~ 0
 T_TX0
-Text Label 3850 4450 0    50   ~ 0
+Text Label 2850 3950 0    50   ~ 0
 T_RX
 $Comp
 L Connector:Conn_ARM_JTAG_SWD_10 J?
@@ -479,12 +334,10 @@ Wire Wire Line
 	5900 1300 5800 1300
 Wire Wire Line
 	5800 1300 5800 1400
-Text Label 3350 4150 2    50   ~ 0
+Text Label 2350 3650 2    50   ~ 0
 T_VCC
 Text Label 6600 1100 0    50   ~ 0
 T_VCC
-Wire Wire Line
-	12800 1100 12000 1100
 $Comp
 L 74xx:CD74HC4067SM U?
 U 1 1 5E3D38E5
@@ -506,12 +359,6 @@ Text Label 11350 3850 0    50   ~ 0
 T_TX2
 Text Label 11350 3950 0    50   ~ 0
 T_TX3
-Text Label 11350 4050 0    50   ~ 0
-T_TX4
-Text Label 11350 4150 0    50   ~ 0
-T_TX5
-Text Label 11350 4250 0    50   ~ 0
-T_TX6
 $Comp
 L power:GND #PWR?
 U 1 1 5E453D38
@@ -561,16 +408,12 @@ Text Label 12350 4250 2    50   ~ 0
 SEL0
 Text Label 12350 4350 2    50   ~ 0
 SEL1
-Text Label 12350 4450 2    50   ~ 0
-SEL2
 Text Label 12350 4950 2    50   ~ 0
 MUXEN
 Text Label 10350 4250 2    50   ~ 0
 SEL0
 Text Label 10350 4350 2    50   ~ 0
 SEL1
-Text Label 10350 4450 2    50   ~ 0
-SEL2
 Text Label 10350 4950 2    50   ~ 0
 MUXEN
 Text Label 13350 3650 0    50   ~ 0
@@ -581,16 +424,8 @@ Text Label 13350 3850 0    50   ~ 0
 T_SWDIO2
 Text Label 13350 3950 0    50   ~ 0
 T_SWDIO3
-Text Label 13350 4050 0    50   ~ 0
-T_SWDIO4
-Text Label 13350 4150 0    50   ~ 0
-T_SWDIO5
-Text Label 13350 4250 0    50   ~ 0
-T_SWDIO6
-Text Label 13350 4350 0    50   ~ 0
-T_SWDIO7
 Text Label 9900 7250 2    50   ~ 0
-MUXEN
+USBMUXEN0
 Text Label 9900 7350 2    50   ~ 0
 SEL0
 Text Label 9900 6750 2    50   ~ 0
@@ -601,30 +436,14 @@ Text Label 9900 6850 2    50   ~ 0
 T_USB_DM0
 Text Label 9900 7050 2    50   ~ 0
 T_USB_DM1
-Text Label 11400 6750 2    50   ~ 0
+Text Label 11650 6750 2    50   ~ 0
 T_USB_DP2
-Text Label 11400 6950 2    50   ~ 0
+Text Label 11650 6950 2    50   ~ 0
 T_USB_DP3
-Text Label 12900 6750 2    50   ~ 0
-T_USB_DP4
-Text Label 12900 6950 2    50   ~ 0
-T_USB_DP5
-Text Label 14400 6750 2    50   ~ 0
-T_USB_DP6
-Text Label 14400 6950 2    50   ~ 0
-T_USB_DP7
-Text Label 11400 6850 2    50   ~ 0
+Text Label 11650 6850 2    50   ~ 0
 T_USB_DM2
-Text Label 11400 7050 2    50   ~ 0
+Text Label 11650 7050 2    50   ~ 0
 T_USB_DM3
-Text Label 12900 6850 2    50   ~ 0
-T_USB_DM4
-Text Label 12900 7050 2    50   ~ 0
-T_USB_DM5
-Text Label 14400 6850 2    50   ~ 0
-T_USB_DM6
-Text Label 14400 7050 2    50   ~ 0
-T_USB_DM7
 $Comp
 L power:+3V3 #PWR?
 U 1 1 5E4EA997
@@ -636,245 +455,34 @@ F 3 "" H 10300 6200 50  0001 C CNN
 	1    10300 6200
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	10300 6200 10300 6300
-Wire Wire Line
-	10300 7550 10300 7650
-Text Label 10700 6950 0    50   ~ 0
-A_DP0
-Text Label 10700 7050 0    50   ~ 0
-A_DM0
 $Comp
 L ic:FSUSB30MUX U?
 U 1 1 5E4EF751
-P 11800 6950
-F 0 "U?" H 11550 7450 50  0000 C CNN
-F 1 "FSUSB30MUX" H 12050 7450 50  0000 C CNN
-F 2 "Package_SO:MSOP-10_3x3mm_P0.5mm" H 11800 6400 50  0001 C CNN
-F 3 "https://www.mouser.com/datasheet/2/149/FSUSB30-1010253.pdf" H 11800 6950 50  0001 C CNN
-	1    11800 6950
+P 12050 6950
+F 0 "U?" H 11800 7450 50  0000 C CNN
+F 1 "FSUSB30MUX" H 12300 7450 50  0000 C CNN
+F 2 "Package_SO:MSOP-10_3x3mm_P0.5mm" H 12050 6400 50  0001 C CNN
+F 3 "https://www.mouser.com/datasheet/2/149/FSUSB30-1010253.pdf" H 12050 6950 50  0001 C CNN
+	1    12050 6950
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	11800 7550 11800 7650
+	12050 7550 12050 7650
 Wire Wire Line
-	10300 6300 11800 6300
-Connection ~ 10300 6300
-Wire Wire Line
-	10300 6300 10300 6400
-Wire Wire Line
-	11800 6300 11800 6400
-Wire Wire Line
-	10300 7650 11800 7650
-Connection ~ 10300 7650
-Wire Wire Line
-	10300 7650 10300 7750
-Text Label 11400 7250 2    50   ~ 0
-MUXEN
-Text Label 11400 7350 2    50   ~ 0
+	12050 6300 12050 6400
+Text Label 11650 7250 2    50   ~ 0
+USBMUXEN1
+Text Label 11650 7350 2    50   ~ 0
 SEL0
-Text Label 12200 6950 0    50   ~ 0
-A_DP1
-Text Label 12200 7050 0    50   ~ 0
-A_DM1
-$Comp
-L ic:FSUSB30MUX U?
-U 1 1 5E502A74
-P 13300 6950
-F 0 "U?" H 13050 7450 50  0000 C CNN
-F 1 "FSUSB30MUX" H 13550 7450 50  0000 C CNN
-F 2 "Package_SO:MSOP-10_3x3mm_P0.5mm" H 13300 6400 50  0001 C CNN
-F 3 "https://www.mouser.com/datasheet/2/149/FSUSB30-1010253.pdf" H 13300 6950 50  0001 C CNN
-	1    13300 6950
-	1    0    0    -1  
-$EndComp
-$Comp
-L ic:FSUSB30MUX U?
-U 1 1 5E503349
-P 14800 6950
-F 0 "U?" H 14550 7450 50  0000 C CNN
-F 1 "FSUSB30MUX" H 15050 7450 50  0000 C CNN
-F 2 "Package_SO:MSOP-10_3x3mm_P0.5mm" H 14800 6400 50  0001 C CNN
-F 3 "https://www.mouser.com/datasheet/2/149/FSUSB30-1010253.pdf" H 14800 6950 50  0001 C CNN
-	1    14800 6950
-	1    0    0    -1  
-$EndComp
-Text Label 12900 7250 2    50   ~ 0
-MUXEN
-Text Label 12900 7350 2    50   ~ 0
-SEL0
-Text Label 14400 7250 2    50   ~ 0
-MUXEN
-Text Label 14400 7350 2    50   ~ 0
-SEL0
-Text Label 13700 6950 0    50   ~ 0
-A_DP2
-Text Label 13700 7050 0    50   ~ 0
-A_DM2
-Text Label 15200 6950 0    50   ~ 0
-A_DP3
-Text Label 15200 7050 0    50   ~ 0
-A_DM3
-Wire Wire Line
-	11800 7650 13300 7650
-Wire Wire Line
-	13300 7650 13300 7550
-Connection ~ 11800 7650
-Wire Wire Line
-	13300 7650 14800 7650
-Wire Wire Line
-	14800 7650 14800 7550
-Connection ~ 13300 7650
-Wire Wire Line
-	11800 6300 13300 6300
-Wire Wire Line
-	13300 6300 13300 6400
-Connection ~ 11800 6300
-Wire Wire Line
-	13300 6300 14800 6300
-Wire Wire Line
-	14800 6300 14800 6400
-Connection ~ 13300 6300
-$Comp
-L power:+3V3 #PWR?
-U 1 1 5E5234A6
-P 10300 8200
-F 0 "#PWR?" H 10300 8050 50  0001 C CNN
-F 1 "+3V3" H 10315 8373 50  0000 C CNN
-F 2 "" H 10300 8200 50  0001 C CNN
-F 3 "" H 10300 8200 50  0001 C CNN
-	1    10300 8200
-	1    0    0    -1  
-$EndComp
-Text Label 9900 8750 2    50   ~ 0
-A_DP0
-Text Label 9900 8950 2    50   ~ 0
-A_DP1
-Text Label 11400 8750 2    50   ~ 0
-A_DP2
-Text Label 11400 8950 2    50   ~ 0
-A_DP3
-Text Label 9900 8850 2    50   ~ 0
-A_DM0
-Text Label 9900 9050 2    50   ~ 0
-A_DM1
-Text Label 11400 8850 2    50   ~ 0
-A_DM2
-Text Label 11400 9050 2    50   ~ 0
-A_DM3
-$Comp
-L ic:FSUSB30MUX U?
-U 1 1 5E5AD949
-P 11800 8950
-F 0 "U?" H 11550 9450 50  0000 C CNN
-F 1 "FSUSB30MUX" H 12050 9450 50  0000 C CNN
-F 2 "Package_SO:MSOP-10_3x3mm_P0.5mm" H 11800 8400 50  0001 C CNN
-F 3 "https://www.mouser.com/datasheet/2/149/FSUSB30-1010253.pdf" H 11800 8950 50  0001 C CNN
-	1    11800 8950
-	1    0    0    -1  
-$EndComp
-Text Label 9900 9250 2    50   ~ 0
-MUXEN
-Text Label 9900 9350 2    50   ~ 0
-SEL1
-Text Label 11400 9250 2    50   ~ 0
-MUXEN
-Text Label 11400 9350 2    50   ~ 0
-SEL1
-Text Label 10700 8950 0    50   ~ 0
-B_DP0
-Text Label 10700 9050 0    50   ~ 0
-B_DM0
-Text Label 12200 8950 0    50   ~ 0
-B_DP1
-Text Label 12200 9050 0    50   ~ 0
-B_DM1
-Wire Wire Line
-	10300 8200 10300 8300
-Wire Wire Line
-	10300 8300 11800 8300
-Connection ~ 10300 8300
-Wire Wire Line
-	10300 8300 10300 8400
-Wire Wire Line
-	13300 8400 13300 8300
-Wire Wire Line
-	11800 8300 11800 8400
-Connection ~ 11800 8300
-Wire Wire Line
-	11800 8300 13300 8300
-$Comp
-L power:GND #PWR?
-U 1 1 5E5D77E4
-P 10300 9750
-F 0 "#PWR?" H 10300 9500 50  0001 C CNN
-F 1 "GND" H 10305 9577 50  0000 C CNN
-F 2 "" H 10300 9750 50  0001 C CNN
-F 3 "" H 10300 9750 50  0001 C CNN
-	1    10300 9750
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	10300 9550 10300 9650
-Wire Wire Line
-	10300 9650 11800 9650
-Connection ~ 10300 9650
-Wire Wire Line
-	10300 9650 10300 9750
-Wire Wire Line
-	13300 9550 13300 9650
-Wire Wire Line
-	11800 9550 11800 9650
-Connection ~ 11800 9650
-Wire Wire Line
-	11800 9650 13300 9650
-$Comp
-L ic:FSUSB30MUX U?
-U 1 1 5E542F14
-P 10300 8950
-F 0 "U?" H 10050 9450 50  0000 C CNN
-F 1 "FSUSB30MUX" H 10550 9450 50  0000 C CNN
-F 2 "Package_SO:MSOP-10_3x3mm_P0.5mm" H 10300 8400 50  0001 C CNN
-F 3 "https://www.mouser.com/datasheet/2/149/FSUSB30-1010253.pdf" H 10300 8950 50  0001 C CNN
-	1    10300 8950
-	1    0    0    -1  
-$EndComp
-$Comp
-L ic:FSUSB30MUX U?
-U 1 1 5E60BB6A
-P 13300 8950
-F 0 "U?" H 13050 9450 50  0000 C CNN
-F 1 "FSUSB30MUX" H 13550 9450 50  0000 C CNN
-F 2 "Package_SO:MSOP-10_3x3mm_P0.5mm" H 13300 8400 50  0001 C CNN
-F 3 "https://www.mouser.com/datasheet/2/149/FSUSB30-1010253.pdf" H 13300 8950 50  0001 C CNN
-	1    13300 8950
-	1    0    0    -1  
-$EndComp
-Text Label 12900 8750 2    50   ~ 0
-B_DP0
-Text Label 12900 8850 2    50   ~ 0
-B_DM0
-Text Label 12900 8950 2    50   ~ 0
-B_DP1
-Text Label 12900 9050 2    50   ~ 0
-B_DM1
-Text Label 12900 9250 2    50   ~ 0
-MUXEN
-Text Label 12900 9350 2    50   ~ 0
-SEL2
-Text Label 13700 9050 0    50   ~ 0
-USBT_DM
-Text Label 13700 8950 0    50   ~ 0
-USBT_DP
 $Comp
 L Connector:Conn_01x03_Male J?
 U 1 1 5E6391B4
-P 4600 4150
-F 0 "J?" H 4572 4082 50  0000 R CNN
-F 1 "Conn_01x03_Male" H 4572 4173 50  0000 R CNN
-F 2 "" H 4600 4150 50  0001 C CNN
-F 3 "~" H 4600 4150 50  0001 C CNN
-	1    4600 4150
+P 5000 4100
+F 0 "J?" H 4972 4032 50  0000 R CNN
+F 1 "Target0" H 4972 4123 50  0000 R CNN
+F 2 "" H 5000 4100 50  0001 C CNN
+F 3 "~" H 5000 4100 50  0001 C CNN
+	1    5000 4100
 	-1   0    0    1   
 $EndComp
 $Comp
@@ -888,28 +496,18 @@ F 3 "" H 14850 4400 50  0001 C CNN
 	1    14850 4400
 	1    0    0    -1  
 $EndComp
-Text Label 15450 3650 0    50   ~ 0
+Text Label 15450 4450 0    50   ~ 0
 T_NRST0
-Text Label 15450 3750 0    50   ~ 0
+Text Label 15450 4550 0    50   ~ 0
 T_NRST1
-Text Label 15450 3850 0    50   ~ 0
+Text Label 15450 4650 0    50   ~ 0
 T_NRST2
-Text Label 15450 3950 0    50   ~ 0
+Text Label 15450 4750 0    50   ~ 0
 T_NRST3
-Text Label 15450 4050 0    50   ~ 0
-T_NRST4
-Text Label 15450 4150 0    50   ~ 0
-T_NRST5
-Text Label 15450 4250 0    50   ~ 0
-T_NRST6
-Text Label 15450 4350 0    50   ~ 0
-T_NRST7
 Text Label 14250 4250 2    50   ~ 0
 SEL0
 Text Label 14250 4350 2    50   ~ 0
 SEL1
-Text Label 14250 4450 2    50   ~ 0
-SEL2
 Wire Wire Line
 	14850 3450 14200 3450
 Wire Wire Line
@@ -918,10 +516,8 @@ Wire Wire Line
 	14200 3850 14250 3850
 Wire Wire Line
 	14850 3450 14850 3600
-Text Label 14250 4950 2    50   ~ 0
-T_RST
-Text Label 11350 4350 0    50   ~ 0
-T_TX7
+Text Label 14150 4550 2    50   ~ 0
+T_NRST
 NoConn ~ 13350 4450
 NoConn ~ 13350 4550
 NoConn ~ 13350 4650
@@ -930,14 +526,6 @@ NoConn ~ 13350 4850
 NoConn ~ 13350 4950
 NoConn ~ 13350 5050
 NoConn ~ 13350 5150
-NoConn ~ 15450 4450
-NoConn ~ 15450 4550
-NoConn ~ 15450 4650
-NoConn ~ 15450 4750
-NoConn ~ 15450 4850
-NoConn ~ 15450 4950
-NoConn ~ 15450 5050
-NoConn ~ 15450 5150
 NoConn ~ 11350 4450
 NoConn ~ 11350 4550
 NoConn ~ 11350 4650
@@ -961,21 +549,6 @@ Wire Wire Line
 	10350 4550 10250 4550
 Wire Wire Line
 	10250 4550 10250 4600
-$Comp
-L power:GND #PWR?
-U 1 1 5E6D549B
-P 14150 4600
-F 0 "#PWR?" H 14150 4350 50  0001 C CNN
-F 1 "GND" H 14155 4427 50  0000 C CNN
-F 2 "" H 14150 4600 50  0001 C CNN
-F 3 "" H 14150 4600 50  0001 C CNN
-	1    14150 4600
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	14250 4550 14150 4550
-Wire Wire Line
-	14150 4550 14150 4600
 $Comp
 L power:GND #PWR?
 U 1 1 5E6D8F99
@@ -1004,10 +577,310 @@ Wire Wire Line
 	12850 5450 12850 5550
 Connection ~ 12850 5550
 Wire Wire Line
-	12850 5550 14850 5550
+	12850 5550 14200 5550
 Wire Wire Line
 	12850 3250 12850 3350
 Connection ~ 12850 3250
 Wire Wire Line
 	12850 3250 14850 3250
+Text Label 4800 4100 2    50   ~ 0
+T_USB_DM0
+Text Label 4800 4200 2    50   ~ 0
+T_USB_DP0
+Text Label 4800 4000 2    50   ~ 0
+GND
+$Comp
+L Connector:Conn_01x03_Male J?
+U 1 1 5E435E55
+P 5000 3600
+F 0 "J?" H 4972 3532 50  0000 R CNN
+F 1 "Upstream" H 4972 3623 50  0000 R CNN
+F 2 "" H 5000 3600 50  0001 C CNN
+F 3 "~" H 5000 3600 50  0001 C CNN
+	1    5000 3600
+	-1   0    0    1   
+$EndComp
+Text Label 4800 3600 2    50   ~ 0
+USB_DM
+Text Label 4800 3700 2    50   ~ 0
+USB_DP
+Text Label 4800 3500 2    50   ~ 0
+GND
+$Comp
+L Connector:Conn_01x03_Male J?
+U 1 1 5E438602
+P 5000 4600
+F 0 "J?" H 4972 4532 50  0000 R CNN
+F 1 "Target1" H 4972 4623 50  0000 R CNN
+F 2 "" H 5000 4600 50  0001 C CNN
+F 3 "~" H 5000 4600 50  0001 C CNN
+	1    5000 4600
+	-1   0    0    1   
+$EndComp
+Text Label 4800 4600 2    50   ~ 0
+T_USB_DM1
+Text Label 4800 4700 2    50   ~ 0
+T_USB_DP1
+Text Label 4800 4500 2    50   ~ 0
+GND
+NoConn ~ 15450 4050
+NoConn ~ 15450 4150
+NoConn ~ 15450 4250
+NoConn ~ 15450 4350
+NoConn ~ 13350 4350
+NoConn ~ 13350 4250
+NoConn ~ 13350 4150
+NoConn ~ 13350 4050
+NoConn ~ 11350 4350
+NoConn ~ 11350 4250
+NoConn ~ 11350 4150
+NoConn ~ 11350 4050
+Wire Wire Line
+	10350 4450 10250 4450
+Wire Wire Line
+	10250 4450 10250 4550
+Connection ~ 10250 4550
+Wire Wire Line
+	12350 4450 12250 4450
+Wire Wire Line
+	12250 4450 12250 4550
+Connection ~ 12250 4550
+Wire Wire Line
+	14250 4450 14200 4450
+Wire Wire Line
+	14200 4450 14200 4950
+Wire Wire Line
+	14150 4550 14250 4550
+Wire Wire Line
+	14250 4950 14200 4950
+Connection ~ 14200 4950
+Wire Wire Line
+	14200 4950 14200 5550
+Connection ~ 14200 5550
+Wire Wire Line
+	14200 5550 14850 5550
+NoConn ~ 15450 3650
+NoConn ~ 15450 3750
+NoConn ~ 15450 3850
+NoConn ~ 15450 3950
+NoConn ~ 15450 4850
+NoConn ~ 15450 4950
+NoConn ~ 15450 5050
+NoConn ~ 15450 5150
+Text Label 12450 6950 0    50   ~ 0
+USB_DP
+Text Label 12450 7050 0    50   ~ 0
+USB_DM
+Wire Wire Line
+	10300 6200 10300 6300
+Wire Wire Line
+	10300 7550 10300 7650
+Wire Wire Line
+	10300 6300 12050 6300
+Connection ~ 10300 6300
+Wire Wire Line
+	10300 6300 10300 6400
+Wire Wire Line
+	10300 7650 12050 7650
+Connection ~ 10300 7650
+Wire Wire Line
+	10300 7650 10300 7750
+$Comp
+L power:GND #PWR?
+U 1 1 5E4898B9
+P 10300 7750
+F 0 "#PWR?" H 10300 7500 50  0001 C CNN
+F 1 "GND" H 10305 7577 50  0000 C CNN
+F 2 "" H 10300 7750 50  0001 C CNN
+F 3 "" H 10300 7750 50  0001 C CNN
+	1    10300 7750
+	1    0    0    -1  
+$EndComp
+Text Label 10700 6950 0    50   ~ 0
+USB_DP
+Text Label 10700 7050 0    50   ~ 0
+USB_DM
+$Comp
+L Connector:Conn_01x03_Male J?
+U 1 1 5E490C78
+P 5000 5100
+F 0 "J?" H 4972 5032 50  0000 R CNN
+F 1 "Target1" H 4972 5123 50  0000 R CNN
+F 2 "" H 5000 5100 50  0001 C CNN
+F 3 "~" H 5000 5100 50  0001 C CNN
+	1    5000 5100
+	-1   0    0    1   
+$EndComp
+Text Label 4800 5100 2    50   ~ 0
+T_USB_DM2
+Text Label 4800 5200 2    50   ~ 0
+T_USB_DP2
+Text Label 4800 5000 2    50   ~ 0
+GND
+$Comp
+L Connector:Conn_01x03_Male J?
+U 1 1 5E4948E3
+P 5000 5600
+F 0 "J?" H 4972 5532 50  0000 R CNN
+F 1 "Target1" H 4972 5623 50  0000 R CNN
+F 2 "" H 5000 5600 50  0001 C CNN
+F 3 "~" H 5000 5600 50  0001 C CNN
+	1    5000 5600
+	-1   0    0    1   
+$EndComp
+Text Label 4800 5600 2    50   ~ 0
+T_USB_DM3
+Text Label 4800 5700 2    50   ~ 0
+T_USB_DP3
+Text Label 4800 5500 2    50   ~ 0
+GND
+$Comp
+L Connector_Generic:Conn_02x05_Odd_Even J?
+U 1 1 5E499E97
+P 2550 4500
+F 0 "J?" H 2600 4917 50  0000 C CNN
+F 1 "Target 1" H 2600 4826 50  0000 C CNN
+F 2 "" H 2550 4500 50  0001 C CNN
+F 3 "~" H 2550 4500 50  0001 C CNN
+	1    2550 4500
+	1    0    0    -1  
+$EndComp
+Text Label 2850 4300 0    50   ~ 0
+T_USB_DP1
+Text Label 2350 4300 2    50   ~ 0
+T_USB_DM1
+Text Label 2850 4400 0    50   ~ 0
+GND
+Text Label 2850 4500 0    50   ~ 0
+T_CLK
+Text Label 2850 4600 0    50   ~ 0
+SWCLK
+Text Label 2350 4500 2    50   ~ 0
+T_NRST1
+Text Label 2350 4600 2    50   ~ 0
+T_SWDIO1
+Text Label 2350 4700 2    50   ~ 0
+T_TX1
+Text Label 2850 4700 0    50   ~ 0
+T_RX
+Text Label 2350 4400 2    50   ~ 0
+T_VCC
+$Comp
+L Connector_Generic:Conn_02x05_Odd_Even J?
+U 1 1 5E49D2DA
+P 2550 5250
+F 0 "J?" H 2600 5667 50  0000 C CNN
+F 1 "Target 2" H 2600 5576 50  0000 C CNN
+F 2 "" H 2550 5250 50  0001 C CNN
+F 3 "~" H 2550 5250 50  0001 C CNN
+	1    2550 5250
+	1    0    0    -1  
+$EndComp
+Text Label 2850 5050 0    50   ~ 0
+T_USB_DP2
+Text Label 2350 5050 2    50   ~ 0
+T_USB_DM2
+Text Label 2850 5150 0    50   ~ 0
+GND
+Text Label 2850 5250 0    50   ~ 0
+T_CLK
+Text Label 2850 5350 0    50   ~ 0
+SWCLK
+Text Label 2350 5250 2    50   ~ 0
+T_NRST2
+Text Label 2350 5350 2    50   ~ 0
+T_SWDIO2
+Text Label 2350 5450 2    50   ~ 0
+T_TX2
+Text Label 2850 5450 0    50   ~ 0
+T_RX
+Text Label 2350 5150 2    50   ~ 0
+T_VCC
+$Comp
+L Connector_Generic:Conn_02x05_Odd_Even J?
+U 1 1 5E49F210
+P 2550 6000
+F 0 "J?" H 2600 6417 50  0000 C CNN
+F 1 "Target 3" H 2600 6326 50  0000 C CNN
+F 2 "" H 2550 6000 50  0001 C CNN
+F 3 "~" H 2550 6000 50  0001 C CNN
+	1    2550 6000
+	1    0    0    -1  
+$EndComp
+Text Label 2850 5800 0    50   ~ 0
+T_USB_DP3
+Text Label 2350 5800 2    50   ~ 0
+T_USB_DM3
+Text Label 2850 5900 0    50   ~ 0
+GND
+Text Label 2850 6000 0    50   ~ 0
+T_CLK
+Text Label 2850 6100 0    50   ~ 0
+SWCLK
+Text Label 2350 6000 2    50   ~ 0
+T_NRST3
+Text Label 2350 6100 2    50   ~ 0
+T_SWDIO3
+Text Label 2350 6200 2    50   ~ 0
+T_TX3
+Text Label 2850 6200 0    50   ~ 0
+T_RX
+Text Label 2350 5900 2    50   ~ 0
+T_VCC
+$Comp
+L Connector:Conn_01x05_Male J?
+U 1 1 5E4A4C97
+P 5000 2700
+F 0 "J?" H 4972 2724 50  0000 R CNN
+F 1 "Comm" H 4972 2633 50  0000 R CNN
+F 2 "" H 5000 2700 50  0001 C CNN
+F 3 "~" H 5000 2700 50  0001 C CNN
+	1    5000 2700
+	-1   0    0    -1  
+$EndComp
+Text Label 4800 2500 2    50   ~ 0
+GND
+Text Label 4800 2600 2    50   ~ 0
+T_CLK
+Text Label 4800 2700 2    50   ~ 0
+T_NRST
+Text Label 4800 2800 2    50   ~ 0
+T_TX
+Text Label 4800 2900 2    50   ~ 0
+T_RX
+$Comp
+L Connector_Generic:Conn_02x07_Odd_Even J?
+U 1 1 5E4AFA7C
+P 2550 2350
+F 0 "J?" H 2600 2867 50  0000 C CNN
+F 1 "STDC14" H 2600 2776 50  0000 C CNN
+F 2 "" H 2550 2350 50  0001 C CNN
+F 3 "~" H 2550 2350 50  0001 C CNN
+	1    2550 2350
+	1    0    0    -1  
+$EndComp
+NoConn ~ 2350 2050
+NoConn ~ 2850 2050
+Text Label 2350 2150 2    50   ~ 0
+T_VCC
+Text Label 2350 2250 2    50   ~ 0
+GND
+Text Label 2350 2350 2    50   ~ 0
+GND
+NoConn ~ 2350 2450
+Text Label 2350 2550 2    50   ~ 0
+GND
+Text Label 2350 2650 2    50   ~ 0
+T_RX
+Text Label 2850 2650 0    50   ~ 0
+T_TX
+Text Label 2850 2550 0    50   ~ 0
+T_NRST
+NoConn ~ 2850 2450
+NoConn ~ 2850 2350
+NoConn ~ 2850 2250
+Text Label 2850 2250 0    50   ~ 0
+SWCLK
+Text Label 2850 2150 0    50   ~ 0
+SWDIO
 $EndSCHEMATC
