@@ -16,34 +16,30 @@ $EndDescr
 $Comp
 L Connector_Generic:Conn_02x05_Odd_Even J1
 U 1 1 5E458FD1
-P 2550 3750
-F 0 "J1" H 2600 4167 50  0000 C CNN
-F 1 "Target" H 2600 4076 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_2x05_P2.54mm_Horizontal" H 2550 3750 50  0001 C CNN
-F 3 "~" H 2550 3750 50  0001 C CNN
-	1    2550 3750
+P 1550 3750
+F 0 "J1" H 1600 4167 50  0000 C CNN
+F 1 "Target" H 1600 4076 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_2x05_P2.54mm_Horizontal" H 1550 3750 50  0001 C CNN
+F 3 "~" H 1550 3750 50  0001 C CNN
+	1    1550 3750
 	1    0    0    -1  
 $EndComp
-Text Label 2850 3550 0    50   ~ 0
+Text Label 1850 3550 0    50   ~ 0
 USB_DP
-Text Label 2350 3550 2    50   ~ 0
+Text Label 1350 3550 2    50   ~ 0
 USB_DM
-Text Label 2850 3650 0    50   ~ 0
-GND
-Text Label 2850 3750 0    50   ~ 0
+Text Label 1850 3750 0    50   ~ 0
 CLK
-Text Label 2850 3850 0    50   ~ 0
+Text Label 1850 3850 0    50   ~ 0
 SWCLK
-Text Label 2350 3750 2    50   ~ 0
+Text Label 1350 3750 2    50   ~ 0
 NRST
-Text Label 2350 3850 2    50   ~ 0
+Text Label 1350 3850 2    50   ~ 0
 SWDIO
-Text Label 2350 3950 2    50   ~ 0
+Text Label 1350 3950 2    50   ~ 0
 TX
-Text Label 2850 3950 0    50   ~ 0
+Text Label 1850 3950 0    50   ~ 0
 RX
-Text Label 2350 3650 2    50   ~ 0
-VCC
 $Comp
 L MCU_ST_STM32F1:STM32F103C8Tx U1
 U 1 1 5E4C527F
@@ -57,22 +53,19 @@ F 3 "http://www.st.com/st-web-ui/static/active/en/resource/technical/document/da
 $EndComp
 Text Label 3900 2100 2    50   ~ 0
 NRST
-Text Label 3900 2500 2    50   ~ 0
+Text Label 3400 2300 0    50   ~ 0
 CLK
-NoConn ~ 3900 2600
 $Comp
 L power:GND #PWR0101
 U 1 1 5E4C8CEE
-P 3650 2400
-F 0 "#PWR0101" H 3650 2150 50  0001 C CNN
-F 1 "GND" H 3655 2227 50  0000 C CNN
-F 2 "" H 3650 2400 50  0001 C CNN
-F 3 "" H 3650 2400 50  0001 C CNN
-	1    3650 2400
+P 3650 2300
+F 0 "#PWR0101" H 3650 2050 50  0001 C CNN
+F 1 "GND" H 3655 2150 50  0000 C CNN
+F 2 "" H 3650 2300 50  0001 C CNN
+F 3 "" H 3650 2300 50  0001 C CNN
+	1    3650 2300
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	3650 2400 3650 2300
 Wire Wire Line
 	3650 2300 3900 2300
 Wire Wire Line
@@ -96,8 +89,6 @@ Wire Wire Line
 Connection ~ 4500 1800
 Wire Wire Line
 	4500 1800 4600 1800
-Text Label 4400 1800 2    50   ~ 0
-VCC
 Wire Wire Line
 	4400 4900 4400 5000
 Wire Wire Line
@@ -114,8 +105,6 @@ Wire Wire Line
 Connection ~ 4500 5000
 Wire Wire Line
 	4500 5000 4600 5000
-Text Label 4400 5000 2    50   ~ 0
-GND
 Text Label 5200 4300 0    50   ~ 0
 USB_DM
 Text Label 5200 4400 0    50   ~ 0
@@ -128,4 +117,276 @@ Text Label 5200 4100 0    50   ~ 0
 TX
 Text Label 5200 4200 0    50   ~ 0
 RX
+$Comp
+L Device:Crystal_Small Y1
+U 1 1 5E4CB724
+P 2500 2450
+F 0 "Y1" V 2454 2538 50  0000 L CNN
+F 1 "8MHz" V 2545 2538 50  0000 L CNN
+F 2 "" H 2500 2450 50  0001 C CNN
+F 3 "~" H 2500 2450 50  0001 C CNN
+	1    2500 2450
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:C_Small C1
+U 1 1 5E4CCAC3
+P 2350 2300
+F 0 "C1" V 2121 2300 50  0000 C CNN
+F 1 "22pF" V 2212 2300 50  0000 C CNN
+F 2 "" H 2350 2300 50  0001 C CNN
+F 3 "~" H 2350 2300 50  0001 C CNN
+	1    2350 2300
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:C_Small C2
+U 1 1 5E4CCCD9
+P 2350 2600
+F 0 "C2" V 2250 2600 50  0000 C CNN
+F 1 "22pF" V 2450 2600 50  0000 C CNN
+F 2 "" H 2350 2600 50  0001 C CNN
+F 3 "~" H 2350 2600 50  0001 C CNN
+	1    2350 2600
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	2500 2350 2500 2300
+Wire Wire Line
+	2500 2300 2450 2300
+Wire Wire Line
+	2500 2550 2500 2600
+Wire Wire Line
+	2500 2600 2450 2600
+$Comp
+L power:GND #PWR03
+U 1 1 5E4CEED8
+P 2200 2750
+F 0 "#PWR03" H 2200 2500 50  0001 C CNN
+F 1 "GND" H 2205 2577 50  0000 C CNN
+F 2 "" H 2200 2750 50  0001 C CNN
+F 3 "" H 2200 2750 50  0001 C CNN
+	1    2200 2750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2200 2600 2200 2300
+Wire Wire Line
+	2200 2300 2250 2300
+Connection ~ 2200 2600
+Wire Wire Line
+	2200 2600 2250 2600
+$Comp
+L Jumper:SolderJumper_3_Open JP1
+U 1 1 5E4D2661
+P 3200 2300
+F 0 "JP1" H 3200 2413 50  0000 C CNN
+F 1 "SolderJumper_3_Open" V 3155 2367 50  0001 L CNN
+F 2 "" H 3200 2300 50  0001 C CNN
+F 3 "~" H 3200 2300 50  0001 C CNN
+	1    3200 2300
+	1    0    0    -1  
+$EndComp
+Connection ~ 2500 2300
+$Comp
+L Jumper:SolderJumper_2_Open JP2
+U 1 1 5E4D4ECF
+P 3200 2600
+F 0 "JP2" H 3200 2713 50  0000 C CNN
+F 1 "SolderJumper_2_Open" V 3245 2668 50  0001 L CNN
+F 2 "" H 3200 2600 50  0001 C CNN
+F 3 "~" H 3200 2600 50  0001 C CNN
+	1    3200 2600
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	3000 2300 2500 2300
+Connection ~ 2500 2600
+Wire Wire Line
+	2200 2750 2200 2600
+Wire Wire Line
+	3350 2600 3900 2600
+Wire Wire Line
+	3200 2450 3200 2500
+Wire Wire Line
+	3200 2500 3900 2500
+Wire Wire Line
+	2500 2600 3050 2600
+$Comp
+L Device:C_Small C3
+U 1 1 5E4E2411
+P 5250 1950
+F 0 "C3" H 5342 1996 50  0000 L CNN
+F 1 "100nF" H 5342 1905 50  0000 L CNN
+F 2 "" H 5250 1950 50  0001 C CNN
+F 3 "~" H 5250 1950 50  0001 C CNN
+	1    5250 1950
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C_Small C4
+U 1 1 5E4E250A
+P 5650 1950
+F 0 "C4" H 5742 1996 50  0000 L CNN
+F 1 "100nF" H 5742 1905 50  0000 L CNN
+F 2 "" H 5650 1950 50  0001 C CNN
+F 3 "~" H 5650 1950 50  0001 C CNN
+	1    5650 1950
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C_Small C5
+U 1 1 5E4E2682
+P 6050 1950
+F 0 "C5" H 6142 1996 50  0000 L CNN
+F 1 "100nF" H 6142 1905 50  0000 L CNN
+F 2 "" H 6050 1950 50  0001 C CNN
+F 3 "~" H 6050 1950 50  0001 C CNN
+	1    6050 1950
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C_Small C6
+U 1 1 5E4E274A
+P 6450 1950
+F 0 "C6" H 6542 1996 50  0000 L CNN
+F 1 "100nF" H 6542 1905 50  0000 L CNN
+F 2 "" H 6450 1950 50  0001 C CNN
+F 3 "~" H 6450 1950 50  0001 C CNN
+	1    6450 1950
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR06
+U 1 1 5E4E301C
+P 5250 2150
+F 0 "#PWR06" H 5250 1900 50  0001 C CNN
+F 1 "GND" H 5255 1977 50  0000 C CNN
+F 2 "" H 5250 2150 50  0001 C CNN
+F 3 "" H 5250 2150 50  0001 C CNN
+	1    5250 2150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5250 2150 5250 2100
+Wire Wire Line
+	5250 2100 5650 2100
+Wire Wire Line
+	6450 2100 6450 2050
+Connection ~ 5250 2100
+Wire Wire Line
+	5250 2100 5250 2050
+Wire Wire Line
+	6050 2050 6050 2100
+Connection ~ 6050 2100
+Wire Wire Line
+	6050 2100 6450 2100
+Wire Wire Line
+	5650 2100 5650 2050
+Connection ~ 5650 2100
+Wire Wire Line
+	5650 2100 6050 2100
+Wire Wire Line
+	4800 1800 5250 1800
+Wire Wire Line
+	6450 1800 6450 1850
+Connection ~ 4800 1800
+Wire Wire Line
+	6050 1850 6050 1800
+Connection ~ 6050 1800
+Wire Wire Line
+	6050 1800 6450 1800
+Wire Wire Line
+	5650 1800 5650 1850
+Connection ~ 5650 1800
+Wire Wire Line
+	5650 1800 6050 1800
+Wire Wire Line
+	5250 1850 5250 1800
+Connection ~ 5250 1800
+Wire Wire Line
+	5250 1800 5650 1800
+$Comp
+L power:GND #PWR05
+U 1 1 5E4E7235
+P 4400 5100
+F 0 "#PWR05" H 4400 4850 50  0001 C CNN
+F 1 "GND" H 4405 4927 50  0000 C CNN
+F 2 "" H 4400 5100 50  0001 C CNN
+F 3 "" H 4400 5100 50  0001 C CNN
+	1    4400 5100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4400 5100 4400 5000
+Connection ~ 4400 5000
+$Comp
+L power:+3V3 #PWR04
+U 1 1 5E4E8095
+P 4400 1700
+F 0 "#PWR04" H 4400 1550 50  0001 C CNN
+F 1 "+3V3" H 4415 1873 50  0000 C CNN
+F 2 "" H 4400 1700 50  0001 C CNN
+F 3 "" H 4400 1700 50  0001 C CNN
+	1    4400 1700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4400 1700 4400 1800
+Connection ~ 4400 1800
+$Comp
+L power:+3V3 #PWR01
+U 1 1 5E4E8EE9
+P 1200 3650
+F 0 "#PWR01" H 1200 3500 50  0001 C CNN
+F 1 "+3V3" V 1215 3778 50  0000 L CNN
+F 2 "" H 1200 3650 50  0001 C CNN
+F 3 "" H 1200 3650 50  0001 C CNN
+	1    1200 3650
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:GND #PWR02
+U 1 1 5E4E942F
+P 2000 3650
+F 0 "#PWR02" H 2000 3400 50  0001 C CNN
+F 1 "GND" V 2005 3522 50  0000 R CNN
+F 2 "" H 2000 3650 50  0001 C CNN
+F 3 "" H 2000 3650 50  0001 C CNN
+	1    2000 3650
+	0    -1   -1   0   
+$EndComp
+NoConn ~ 3900 3200
+NoConn ~ 3900 3300
+NoConn ~ 3900 3400
+NoConn ~ 3900 3500
+NoConn ~ 3900 3600
+NoConn ~ 3900 3700
+NoConn ~ 3900 3800
+NoConn ~ 3900 3900
+NoConn ~ 3900 4000
+NoConn ~ 3900 4100
+NoConn ~ 3900 4200
+NoConn ~ 3900 4300
+NoConn ~ 3900 4400
+NoConn ~ 3900 4500
+NoConn ~ 3900 4600
+NoConn ~ 3900 4700
+NoConn ~ 3900 2800
+NoConn ~ 3900 2900
+NoConn ~ 3900 3000
+NoConn ~ 5200 3200
+NoConn ~ 5200 3300
+NoConn ~ 5200 3400
+NoConn ~ 5200 3500
+NoConn ~ 5200 3600
+NoConn ~ 5200 3700
+NoConn ~ 5200 3800
+NoConn ~ 5200 3900
+NoConn ~ 5200 4000
+NoConn ~ 5200 4700
+Wire Wire Line
+	1200 3650 1350 3650
+Wire Wire Line
+	2000 3650 1850 3650
 $EndSCHEMATC
