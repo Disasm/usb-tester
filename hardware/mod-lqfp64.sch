@@ -471,19 +471,6 @@ Text Label 1350 4750 2    50   ~ 0
 HUSB_D-
 Text Label 1350 4850 2    50   ~ 0
 HUSB_D+
-$Comp
-L power:GND #PWR0101
-U 1 1 5E4DE6C3
-P 2050 4750
-F 0 "#PWR0101" H 2050 4500 50  0001 C CNN
-F 1 "GND" V 2055 4622 50  0000 R CNN
-F 2 "" H 2050 4750 50  0001 C CNN
-F 3 "" H 2050 4750 50  0001 C CNN
-	1    2050 4750
-	0    -1   -1   0   
-$EndComp
-Wire Wire Line
-	2050 4750 1850 4750
 NoConn ~ 1350 4550
 NoConn ~ 1350 4650
 NoConn ~ 1850 4550
@@ -491,4 +478,9 @@ NoConn ~ 1850 4650
 NoConn ~ 1850 4850
 NoConn ~ 1850 4950
 NoConn ~ 1350 4950
+Text Label 6800 2950 2    50   ~ 0
+VCAP_2
+Text Label 6800 2850 2    50   ~ 0
+VCAP_1
+NoConn ~ 1850 4750
 $EndSCHEMATC
