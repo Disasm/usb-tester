@@ -397,7 +397,7 @@ F 1 "USB0" H 3972 3923 50  0000 R CNN
 F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 4000 3900 50  0001 C CNN
 F 3 "~" H 4000 3900 50  0001 C CNN
 	1    4000 3900
-	-1   0    0    1   
+	-1   0    0    -1  
 $EndComp
 $Comp
 L 4xxx_IEEE:4514 U5
@@ -490,7 +490,7 @@ F 1 "USB1" H 3972 4973 50  0000 R CNN
 F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 4000 4950 50  0001 C CNN
 F 3 "~" H 4000 4950 50  0001 C CNN
 	1    4000 4950
-	-1   0    0    1   
+	-1   0    0    -1  
 $EndComp
 Text Label 3800 4950 2    50   ~ 0
 T1_USB_D-
@@ -572,7 +572,7 @@ F 1 "USB2" H 3972 5923 50  0000 R CNN
 F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 4000 5900 50  0001 C CNN
 F 3 "~" H 4000 5900 50  0001 C CNN
 	1    4000 5900
-	-1   0    0    1   
+	-1   0    0    -1  
 $EndComp
 Text Label 3800 5900 2    50   ~ 0
 T2_USB_D-
@@ -589,7 +589,7 @@ F 1 "USB3" H 3972 6873 50  0000 R CNN
 F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 4000 6850 50  0001 C CNN
 F 3 "~" H 4000 6850 50  0001 C CNN
 	1    4000 6850
-	-1   0    0    1   
+	-1   0    0    -1  
 $EndComp
 Text Label 3800 6850 2    50   ~ 0
 T3_USB_D-
