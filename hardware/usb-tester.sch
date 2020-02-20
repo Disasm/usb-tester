@@ -341,7 +341,7 @@ SEL1
 Text Label 9900 7250 2    50   ~ 0
 USBMUXEN0
 Text Label 9900 7350 2    50   ~ 0
-SEL0
+USBSEL
 Text Label 9900 6750 2    50   ~ 0
 T0_USB_D+
 Text Label 9900 6950 2    50   ~ 0
@@ -387,7 +387,7 @@ Wire Wire Line
 Text Label 11650 7250 2    50   ~ 0
 USBMUXEN1
 Text Label 11650 7350 2    50   ~ 0
-SEL0
+USBSEL
 $Comp
 L Connector:Conn_01x03_Male J8
 U 1 1 5E6391B4
@@ -1027,4 +1027,6 @@ Wire Wire Line
 	9000 1200 9350 1200
 Wire Wire Line
 	8700 1200 8800 1200
+Text Label 9500 2350 2    50   ~ 0
+USBSEL
 $EndSCHEMATC
