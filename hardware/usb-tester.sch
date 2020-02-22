@@ -17,12 +17,12 @@ $Comp
 L Power_Protection:USBLC6-2SC6 U3
 U 1 1 5E3FD4F5
 P 2300 1700
-F 0 "U3" H 2050 2050 50  0000 C CNN
-F 1 "USBLC6-2SC6" H 2600 2050 50  0000 C CNN
+F 0 "U3" H 2300 2381 50  0000 C CNN
+F 1 "USBLC6-2SC6" H 2300 2290 50  0000 C CNN
 F 2 "Package_TO_SOT_SMD:SOT-23-6" H 1550 2100 50  0001 C CNN
 F 3 "http://www2.st.com/resource/en/datasheet/CD00050750.pdf" H 2500 2050 50  0001 C CNN
 	1    2300 1700
-	1    0    0    -1  
+	-1   0    0    -1  
 $EndComp
 $Comp
 L Connector:USB_B_Micro J1
@@ -473,7 +473,7 @@ F 1 "Upstream" H 1622 2573 50  0000 R CNN
 F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 1650 2550 50  0001 C CNN
 F 3 "~" H 1650 2550 50  0001 C CNN
 	1    1650 2550
-	-1   0    0    1   
+	-1   0    0    -1  
 $EndComp
 Text Label 1450 2550 2    50   ~ 0
 USB_D-
@@ -1029,4 +1029,6 @@ Wire Wire Line
 	8700 1200 8800 1200
 Text Label 9500 2350 2    50   ~ 0
 USBSEL
+Text Label 4400 1100 2    50   ~ 0
+VIN
 $EndSCHEMATC
