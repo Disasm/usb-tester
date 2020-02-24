@@ -2,7 +2,7 @@
 
   (general
     (thickness 1.6)
-    (drawings 6)
+    (drawings 4)
     (tracks 199)
     (zones 0)
     (modules 12)
@@ -59,7 +59,7 @@
     (pad_drill 0.762)
     (pad_to_mask_clearance 0.05)
     (solder_mask_min_width 0.15)
-    (aux_axis_origin 0 0)
+    (aux_axis_origin 32 42)
     (visible_elements FFFDFF7F)
     (pcbplotparams
       (layerselection 0x010fc_ffffffff)
@@ -816,12 +816,10 @@
     )
   )
 
-  (gr_line (start 32.004 41.9735) (end 32.004 56.515) (layer Edge.Cuts) (width 0.1) (tstamp 5E54627A))
-  (gr_line (start 57.15 41.9735) (end 57.15 43.942) (layer Edge.Cuts) (width 0.1) (tstamp 5E546279))
-  (gr_line (start 32.004 41.9735) (end 57.15 41.9735) (layer Edge.Cuts) (width 0.1) (tstamp 5E546285))
-  (gr_line (start 57.15 56.515) (end 57.15 43.942) (layer Edge.Cuts) (width 0.1))
-  (gr_line (start 38.481 56.515) (end 57.15 56.515) (layer Edge.Cuts) (width 0.1))
-  (gr_line (start 32.004 56.515) (end 38.481 56.515) (layer Edge.Cuts) (width 0.1))
+  (gr_line (start 32 42) (end 32 57) (layer Edge.Cuts) (width 0.1) (tstamp 5E54627A))
+  (gr_line (start 32 42) (end 57 42) (layer Edge.Cuts) (width 0.1) (tstamp 5E546285))
+  (gr_line (start 57 57) (end 57 42) (layer Edge.Cuts) (width 0.1))
+  (gr_line (start 32 57) (end 57 57) (layer Edge.Cuts) (width 0.1))
 
   (segment (start 55.44 51.153) (end 51.395 51.153) (width 0.2) (layer F.Cu) (net 1))
   (segment (start 55.864 52.577) (end 55.864 51.577) (width 0.2) (layer F.Cu) (net 1))
