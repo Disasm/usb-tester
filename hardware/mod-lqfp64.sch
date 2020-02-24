@@ -68,8 +68,6 @@ Wire Wire Line
 Connection ~ 7550 5950
 Wire Wire Line
 	7550 5950 7650 5950
-Text Label 8250 3550 0    50   ~ 0
-USB_D-
 Text Label 8250 3650 0    50   ~ 0
 USB_D+
 Text Label 8250 3750 0    50   ~ 0
@@ -416,10 +414,8 @@ Wire Wire Line
 	7850 2150 8450 2150
 Connection ~ 7850 2150
 NoConn ~ 8250 3950
-Text Label 8250 5550 0    50   ~ 0
-HUSB_D-
 Text Label 8250 5650 0    50   ~ 0
-HUSB_D+
+USB_D+
 NoConn ~ 8250 4150
 NoConn ~ 8250 4250
 NoConn ~ 8250 4350
@@ -456,31 +452,12 @@ Wire Wire Line
 Wire Wire Line
 	10050 2450 10050 2400
 Connection ~ 9650 2450
-$Comp
-L Connector_Generic:Conn_02x05_Odd_Even J2
-U 1 1 5E4DE6AA
-P 1550 4750
-F 0 "J2" H 1600 5167 50  0000 C CNN
-F 1 "Target_HS" H 1600 5076 50  0000 C CNN
-F 2 "unsorted:BH-10-Edge" H 1550 4750 50  0001 C CNN
-F 3 "~" H 1550 4750 50  0001 C CNN
-	1    1550 4750
-	1    0    0    -1  
-$EndComp
-Text Label 1350 4750 2    50   ~ 0
-HUSB_D-
-Text Label 1350 4850 2    50   ~ 0
-HUSB_D+
-NoConn ~ 1350 4550
-NoConn ~ 1350 4650
-NoConn ~ 1850 4550
-NoConn ~ 1850 4650
-NoConn ~ 1850 4850
-NoConn ~ 1850 4950
-NoConn ~ 1350 4950
 Text Label 6800 2950 2    50   ~ 0
 VCAP_2
 Text Label 6800 2850 2    50   ~ 0
 VCAP_1
-NoConn ~ 1850 4750
+Text Label 8250 3550 0    50   ~ 0
+USB_D-
+Text Label 8250 5550 0    50   ~ 0
+USB_D-
 $EndSCHEMATC
