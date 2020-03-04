@@ -1,0 +1,6 @@
+[workspace]
+members = [
+    "usb-switch-cli",
+    "usb-switch-common",
+    "usb-switch-fw",
+]
