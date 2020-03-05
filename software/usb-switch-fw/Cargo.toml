@@ -12,6 +12,4 @@ panic-semihosting = "0.5"
 usb-device = "0.2.4"
 usbd-serial = "0.1"
 embedded-hal = "0.2.3"
-
-[dependencies.usb-switch-common]
-path = "../usb-switch-common"
+usb-switch-common = { path = "../usb-switch-common" }
