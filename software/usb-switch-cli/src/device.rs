@@ -1,12 +1,14 @@
 use std::time::Duration;
 use libusb::*;
 use usb_switch_common::{USB_DEVICE_VID, USB_DEVICE_PID, Selection, REQ_SELECT};
+use serialport::{SerialPortType, SerialPort};
 
 pub const TIMEOUT: Duration = Duration::from_secs(1);
 
 
 pub struct DeviceHandles<'a> {
     pub handle: DeviceHandle<'a>,
+    pub serial: Box<dyn SerialPort>,
 }
 
 impl DeviceHandles<'_> {
@@ -56,10 +58,29 @@ pub fn open_device(ctx: &Context) -> libusb::Result<DeviceHandles<'_>> {
 
         let handle = device.open()?;
 
+        let mut serial_path = None;
+        for port_info in serialport::available_ports().unwrap() {
+            let usb_info = match port_info.port_type {
+                SerialPortType::UsbPort(usb_info) => usb_info,
+                _ => continue,
+            };
+            if usb_info.vid == USB_DEVICE_VID && usb_info.pid == USB_DEVICE_PID {
+                serial_path = Some(port_info.port_name);
+                break;
+            }
+        }
+
+        let serial = if let Some(path) = serial_path {
+            serialport::open(&path).map_err(|_| libusb::Error::Other)?
+        } else {
+            return Err(libusb::Error::NoDevice);
+        };
+
         //handle.reset()?;
 
         return Ok(DeviceHandles {
             handle,
+            serial,
         });
     }
 
