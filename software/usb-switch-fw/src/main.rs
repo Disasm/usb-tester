@@ -68,7 +68,7 @@ fn main() -> ! {
     let mut afio = dp.AFIO.constrain(&mut rcc.apb2);
     let tx = gpioa.pa2.into_alternate_push_pull(&mut gpioa.crl);
     let rx = gpioa.pa3.into_floating_input(&mut gpioa.crl);
-    let config = Config::default().baudrate(115_200.bps());
+    let config = Config::default().baudrate(115_200.bps()).parity_even();
     let mut uart = Serial::usart2(dp.USART2, (tx, rx), &mut afio.mapr, config, clocks, &mut rcc.apb1);
 
     let mut pin_nrst = gpioa.pa0.into_open_drain_output_with_state(&mut gpioa.crl, State::High);
