@@ -108,10 +108,6 @@ fn main() -> ! {
             // Ignore USB errors
         }
 
-        if !usb_dev.poll(&mut [&mut serial, &mut control]) {
-            continue;
-        }
-
         if !tx_pending {
             let mut buf = [0];
             if let Ok(len) = serial.read(&mut buf) {
@@ -152,6 +148,10 @@ fn main() -> ! {
             } else {
                 led.set_high().ok(); // Turn off
             }
+        }
+
+        if !usb_dev.poll(&mut [&mut serial, &mut control]) {
+            continue;
         }
     }
 }
