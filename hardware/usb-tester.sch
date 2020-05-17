@@ -56,21 +56,6 @@ Wire Wire Line
 Connection ~ 1200 1800
 Wire Wire Line
 	1200 1800 1200 1900
-$Comp
-L power:VBUS #PWR02
-U 1 1 5E40F04F
-P 1600 1000
-F 0 "#PWR02" H 1600 850 50  0001 C CNN
-F 1 "VBUS" H 1615 1173 50  0000 C CNN
-F 2 "" H 1600 1000 50  0001 C CNN
-F 3 "" H 1600 1000 50  0001 C CNN
-	1    1600 1000
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	1600 1000 1600 1100
-Wire Wire Line
-	1600 1100 1500 1100
 Wire Wire Line
 	1500 1300 2900 1300
 Wire Wire Line
@@ -100,97 +85,6 @@ F 3 "" H 2300 2300 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	2300 2300 2300 2200
-Connection ~ 5250 1100
-Wire Wire Line
-	5250 1000 5250 1100
-$Comp
-L power:+3V3 #PWR06
-U 1 1 5E41755B
-P 5250 1000
-F 0 "#PWR06" H 5250 850 50  0001 C CNN
-F 1 "+3V3" H 5265 1173 50  0000 C CNN
-F 2 "" H 5250 1000 50  0001 C CNN
-F 3 "" H 5250 1000 50  0001 C CNN
-	1    5250 1000
-	1    0    0    -1  
-$EndComp
-Connection ~ 4450 1100
-$Comp
-L power:VBUS #PWR04
-U 1 1 5E416BDE
-P 4000 800
-F 0 "#PWR04" H 4000 650 50  0001 C CNN
-F 1 "VBUS" H 4015 973 50  0000 C CNN
-F 2 "" H 4000 800 50  0001 C CNN
-F 3 "" H 4000 800 50  0001 C CNN
-	1    4000 800 
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	4450 1100 4550 1100
-Wire Wire Line
-	4450 1200 4450 1100
-Wire Wire Line
-	4450 1500 4450 1400
-Wire Wire Line
-	4850 1500 4450 1500
-Connection ~ 4850 1500
-Wire Wire Line
-	4850 1600 4850 1500
-$Comp
-L power:GND #PWR05
-U 1 1 5E415946
-P 4850 1600
-F 0 "#PWR05" H 4850 1350 50  0001 C CNN
-F 1 "GND" H 4855 1427 50  0000 C CNN
-F 2 "" H 4850 1600 50  0001 C CNN
-F 3 "" H 4850 1600 50  0001 C CNN
-	1    4850 1600
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	5250 1500 5250 1400
-Wire Wire Line
-	4850 1500 5250 1500
-Wire Wire Line
-	4850 1400 4850 1500
-Wire Wire Line
-	5250 1100 5250 1200
-Wire Wire Line
-	5150 1100 5250 1100
-$Comp
-L Device:CP_Small C2
-U 1 1 5E414CFA
-P 5250 1300
-F 0 "C2" H 5338 1346 50  0000 L CNN
-F 1 "10uF" H 5338 1255 50  0000 L CNN
-F 2 "Capacitor_Tantalum_SMD:CP_EIA-3216-18_Kemet-A_Pad1.58x1.35mm_HandSolder" H 5250 1300 50  0001 C CNN
-F 3 "~" H 5250 1300 50  0001 C CNN
-	1    5250 1300
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:CP_Small C1
-U 1 1 5E41398F
-P 4450 1300
-F 0 "C1" H 4363 1346 50  0000 R CNN
-F 1 "10uF" H 4363 1255 50  0000 R CNN
-F 2 "Capacitor_Tantalum_SMD:CP_EIA-3216-18_Kemet-A_Pad1.58x1.35mm_HandSolder" H 4450 1300 50  0001 C CNN
-F 3 "~" H 4450 1300 50  0001 C CNN
-	1    4450 1300
-	1    0    0    -1  
-$EndComp
-$Comp
-L Regulator_Linear:TLV1117-33 U2
-U 1 1 5E3FF783
-P 4850 1100
-F 0 "U2" H 4850 1342 50  0000 C CNN
-F 1 "TLV1117-33" H 4850 1251 50  0000 C CNN
-F 2 "Package_TO_SOT_SMD:SOT-223-3_TabPin2" H 4850 1100 50  0001 C CNN
-F 3 "http://www.ti.com/lit/ds/symlink/tlv1117.pdf" H 4850 1100 50  0001 C CNN
-	1    4850 1100
-	1    0    0    -1  
-$EndComp
 $Comp
 L Connector_Generic:Conn_02x05_Odd_Even J2
 U 1 1 5E458FD1
@@ -215,10 +109,7 @@ T_TX
 Text Label 2350 3650 2    50   ~ 0
 T_RX
 Wire Wire Line
-	2300 1100 1600 1100
-Wire Wire Line
 	2300 1100 2300 1200
-Connection ~ 1600 1100
 Text Label 2850 3850 0    50   ~ 0
 T_VCC
 $Comp
@@ -282,13 +173,13 @@ F 3 "" H 13000 4400 50  0001 C CNN
 	1    13000 4400
 	1    0    0    -1  
 $EndComp
-Text Label 13600 4450 0    50   ~ 0
-T0_NRST
 Text Label 13600 4550 0    50   ~ 0
+T0_NRST
+Text Label 13600 4950 0    50   ~ 0
 T1_NRST
-Text Label 13600 4650 0    50   ~ 0
+Text Label 13600 4450 0    50   ~ 0
 T2_NRST
-Text Label 13600 4750 0    50   ~ 0
+Text Label 13600 4850 0    50   ~ 0
 T3_NRST
 Text Label 12400 4250 2    50   ~ 0
 SEL0
@@ -394,15 +285,13 @@ F 3 "~" H 2550 6750 50  0001 C CNN
 	1    2550 6750
 	1    0    0    -1  
 $EndComp
-Text Label 9350 1100 2    50   ~ 0
-GND
 Text Label 9350 1200 2    50   ~ 0
-T_BOOT0
+GND
 Text Label 9350 1300 2    50   ~ 0
 T_NRST
-Text Label 9350 1400 2    50   ~ 0
+Text Label 9350 2000 2    50   ~ 0
 T_TX
-Text Label 9350 1500 2    50   ~ 0
+Text Label 9350 1900 2    50   ~ 0
 T_RX
 Text Label 2850 3550 0    50   ~ 0
 T_BOOT0
@@ -442,33 +331,16 @@ Text Label 2350 6550 2    50   ~ 0
 T3_NRST
 Text Label 2350 6650 2    50   ~ 0
 T_RX
-Text Label 9350 1600 2    50   ~ 0
+Text Label 9350 1400 2    50   ~ 0
 SEL0
-Text Label 9350 1700 2    50   ~ 0
+Text Label 9350 1500 2    50   ~ 0
 SEL1
-Text Label 9350 1900 2    50   ~ 0
+Text Label 9350 1700 2    50   ~ 0
 ~USBMUXEN
-Text Label 9350 2000 2    50   ~ 0
+Text Label 9350 1800 2    50   ~ 0
 PWR_EN
 Wire Wire Line
 	12350 5550 13000 5550
-$Comp
-L Jumper:Jumper_3_Bridged12 JP1
-U 1 1 5E521678
-P 4000 1100
-F 0 "JP1" V 3954 1167 50  0000 L CNN
-F 1 "Power source" V 4045 1167 50  0000 L CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 4000 1100 50  0001 C CNN
-F 3 "~" H 4000 1100 50  0001 C CNN
-	1    4000 1100
-	0    -1   1    0   
-$EndComp
-Wire Wire Line
-	4000 800  4000 850 
-Wire Wire Line
-	4150 1100 4250 1100
-Text Label 4000 1350 2    50   ~ 0
-EXT_5V
 $Comp
 L Connector:Conn_01x11_Male J11
 U 1 1 5E526B4B
@@ -480,28 +352,24 @@ F 3 "~" H 9550 1600 50  0001 C CNN
 	1    9550 1600
 	-1   0    0    -1  
 $EndComp
-Text Label 9350 2100 2    50   ~ 0
-EXT_5V
-Text Label 10450 1100 2    50   ~ 0
-GND
 Text Label 10450 1200 2    50   ~ 0
+GND
+Text Label 10450 2100 2    50   ~ 0
 T_BOOT0
 Text Label 10450 1300 2    50   ~ 0
 T_NRST
-Text Label 10450 1400 2    50   ~ 0
-T_TX
-Text Label 10450 1500 2    50   ~ 0
-T_RX
-Text Label 10450 1600 2    50   ~ 0
-SEL0
-Text Label 10450 1700 2    50   ~ 0
-SEL1
-Text Label 10450 1900 2    50   ~ 0
-~USBMUXEN
 Text Label 10450 2000 2    50   ~ 0
+T_TX
+Text Label 10450 1900 2    50   ~ 0
+T_RX
+Text Label 10450 1400 2    50   ~ 0
+SEL0
+Text Label 10450 1500 2    50   ~ 0
+SEL1
+Text Label 10450 1700 2    50   ~ 0
+~USBMUXEN
+Text Label 10450 1800 2    50   ~ 0
 PWR_EN
-Text Label 10450 2100 2    50   ~ 0
-EXT_5V
 $Comp
 L Device:R_Small R2
 U 1 1 5E54002C
@@ -516,27 +384,14 @@ $EndComp
 $Comp
 L Device:R_Small R3
 U 1 1 5E541CCC
-P 8900 1200
-F 0 "R3" V 8704 1200 50  0000 C CNN
-F 1 "10k" V 8795 1200 50  0000 C CNN
-F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 8900 1200 50  0001 C CNN
-F 3 "~" H 8900 1200 50  0001 C CNN
-	1    8900 1200
+P 8900 2100
+F 0 "R3" V 8704 2100 50  0000 C CNN
+F 1 "10k" V 8795 2100 50  0000 C CNN
+F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 8900 2100 50  0001 C CNN
+F 3 "~" H 8900 2100 50  0001 C CNN
+	1    8900 2100
 	0    1    1    0   
 $EndComp
-$Comp
-L power:+3V3 #PWR012
-U 1 1 5E543852
-P 8700 1150
-F 0 "#PWR012" H 8700 1000 50  0001 C CNN
-F 1 "+3V3" H 8715 1323 50  0000 C CNN
-F 2 "" H 8700 1150 50  0001 C CNN
-F 3 "" H 8700 1150 50  0001 C CNN
-	1    8700 1150
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	8700 1150 8700 1200
 $Comp
 L power:GND #PWR011
 U 1 1 5E546273
@@ -583,11 +438,9 @@ Wire Wire Line
 Wire Wire Line
 	9100 7200 9100 7250
 Wire Wire Line
-	9000 1200 9350 1200
+	9000 2100 9350 2100
 Wire Wire Line
-	8700 1200 8800 1200
-Text Label 4400 1100 2    50   ~ 0
-VIN
+	8700 2100 8800 2100
 Wire Wire Line
 	10300 7550 10300 7600
 Wire Wire Line
@@ -620,35 +473,6 @@ Wire Wire Line
 	9900 7350 9850 7350
 Wire Wire Line
 	9850 7350 9850 7400
-$Comp
-L power:PWR_FLAG #FLG02
-U 1 1 5E8C30AC
-P 4250 950
-F 0 "#FLG02" H 4250 1025 50  0001 C CNN
-F 1 "PWR_FLAG" H 4250 1123 50  0000 C CNN
-F 2 "" H 4250 950 50  0001 C CNN
-F 3 "~" H 4250 950 50  0001 C CNN
-	1    4250 950 
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	4250 950  4250 1100
-Connection ~ 4250 1100
-Wire Wire Line
-	4250 1100 4450 1100
-$Comp
-L power:PWR_FLAG #FLG01
-U 1 1 5E8C57B8
-P 4000 1450
-F 0 "#FLG01" H 4000 1525 50  0001 C CNN
-F 1 "PWR_FLAG" H 4000 1623 50  0000 C CNN
-F 2 "" H 4000 1450 50  0001 C CNN
-F 3 "~" H 4000 1450 50  0001 C CNN
-	1    4000 1450
-	-1   0    0    1   
-$EndComp
-Wire Wire Line
-	4000 1450 4000 1350
 Connection ~ 13000 5550
 NoConn ~ 2850 3950
 NoConn ~ 2350 3950
@@ -789,63 +613,29 @@ NoConn ~ 4350 6950
 $Comp
 L power:GND #PWR07
 U 1 1 5E55A712
-P 6050 1450
-F 0 "#PWR07" H 6050 1200 50  0001 C CNN
-F 1 "GND" H 6055 1277 50  0000 C CNN
-F 2 "" H 6050 1450 50  0001 C CNN
-F 3 "" H 6050 1450 50  0001 C CNN
-	1    6050 1450
+P 5950 1450
+F 0 "#PWR07" H 5950 1200 50  0001 C CNN
+F 1 "GND" H 5955 1277 50  0000 C CNN
+F 2 "" H 5950 1450 50  0001 C CNN
+F 3 "" H 5950 1450 50  0001 C CNN
+	1    5950 1450
 	1    0    0    -1  
 $EndComp
 $Comp
 L Device:R_Small R1
 U 1 1 5E55A708
-P 6050 1350
-F 0 "R1" V 5854 1350 50  0000 C CNN
-F 1 "10k" V 5945 1350 50  0000 C CNN
-F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 6050 1350 50  0001 C CNN
-F 3 "~" H 6050 1350 50  0001 C CNN
-	1    6050 1350
+P 5950 1350
+F 0 "R1" H 6009 1304 50  0000 L CNN
+F 1 "10k" H 6009 1395 50  0000 L CNN
+F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 5950 1350 50  0001 C CNN
+F 3 "~" H 5950 1350 50  0001 C CNN
+	1    5950 1350
 	-1   0    0    1   
 $EndComp
-$Comp
-L power:+3V3 #PWR08
-U 1 1 5E53CB10
-P 6200 1000
-F 0 "#PWR08" H 6200 850 50  0001 C CNN
-F 1 "+3V3" H 6215 1173 50  0000 C CNN
-F 2 "" H 6200 1000 50  0001 C CNN
-F 3 "" H 6200 1000 50  0001 C CNN
-	1    6200 1000
-	1    0    0    -1  
-$EndComp
-Text Label 6750 2050 2    50   ~ 0
-T_VCC
-Text Label 6750 1950 2    50   ~ 0
-PWR_FAULT
 Text Label 7000 1300 0    50   ~ 0
 PWR_FAULT
-Wire Wire Line
-	6450 1750 6750 1750
-Wire Wire Line
-	6450 1700 6450 1750
-$Comp
-L Connector:Conn_01x05_Male J10
-U 1 1 5E52FA7D
-P 6950 1850
-F 0 "J10" H 6922 1782 50  0000 R CNN
-F 1 "PowerMon" H 6922 1873 50  0000 R CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical" H 6950 1850 50  0001 C CNN
-F 3 "~" H 6950 1850 50  0001 C CNN
-	1    6950 1850
-	-1   0    0    1   
-$EndComp
-Text Label 6750 1850 2    50   ~ 0
-PWR_EN
-Text Label 6750 1650 2    50   ~ 0
-GND
 Text Label 7000 1100 0    50   ~ 0
-T_VCC
+T_VCC_SRC
 Wire Wire Line
 	6200 1300 6200 1400
 Wire Wire Line
@@ -868,17 +658,6 @@ Wire Wire Line
 Wire Wire Line
 	6200 1000 6200 1100
 $Comp
-L power:+3V3 #PWR010
-U 1 1 5E3CD803
-P 6450 1700
-F 0 "#PWR010" H 6450 1550 50  0001 C CNN
-F 1 "+3V3" H 6465 1873 50  0000 C CNN
-F 2 "" H 6450 1700 50  0001 C CNN
-F 3 "" H 6450 1700 50  0001 C CNN
-	1    6450 1700
-	1    0    0    -1  
-$EndComp
-$Comp
 L ic:STMPS2151STR U3
 U 1 1 5E3CBD43
 P 6650 1200
@@ -890,16 +669,14 @@ F 3 "https://www.st.com/resource/en/datasheet/stmps2141.pdf" H 6650 1200 50  000
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	6300 1200 6050 1200
-Wire Wire Line
-	6050 1200 6050 1250
-Text Label 13600 4850 0    50   ~ 0
+	5950 1200 5950 1250
+Text Label 13600 4750 0    50   ~ 0
 T4_NRST
-Text Label 13600 4950 0    50   ~ 0
-T5_NRST
-Text Label 13600 5050 0    50   ~ 0
-T6_NRST
 Text Label 13600 5150 0    50   ~ 0
+T5_NRST
+Text Label 13600 4650 0    50   ~ 0
+T6_NRST
+Text Label 13600 5050 0    50   ~ 0
 T7_NRST
 $Comp
 L Connector:Conn_01x11_Male J12
@@ -912,9 +689,9 @@ F 3 "~" H 10650 1600 50  0001 C CNN
 	1    10650 1600
 	-1   0    0    -1  
 $EndComp
-Text Label 9350 1800 2    50   ~ 0
+Text Label 9350 1600 2    50   ~ 0
 SEL2
-Text Label 10450 1800 2    50   ~ 0
+Text Label 10450 1600 2    50   ~ 0
 SEL2
 Text Label 12400 4450 2    50   ~ 0
 SEL2
@@ -922,4 +699,44 @@ Text Label 1550 1300 0    50   ~ 0
 USBC_D+
 Text Label 1550 1400 0    50   ~ 0
 USBC_D-
+$Comp
+L Connector:Conn_01x02_Male J15
+U 1 1 5EA8D306
+P 6950 2350
+F 0 "J15" H 6922 2232 50  0000 R CNN
+F 1 "Idd" H 6922 2323 50  0000 R CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 6950 2350 50  0001 C CNN
+F 3 "~" H 6950 2350 50  0001 C CNN
+	1    6950 2350
+	-1   0    0    1   
+$EndComp
+Text Label 6750 2250 2    50   ~ 0
+T_VCC
+Text Label 6750 2350 2    50   ~ 0
+T_VCC_SRC
+Text Label 9350 2100 2    50   ~ 0
+T_BOOT0
+Text Label 8700 2100 2    50   ~ 0
+T_VCC
+Wire Wire Line
+	1500 1100 2300 1100
+$Comp
+L power:+3V3 #PWR08
+U 1 1 5E53CB10
+P 6200 1000
+F 0 "#PWR08" H 6200 850 50  0001 C CNN
+F 1 "+3V3" H 6215 1173 50  0000 C CNN
+F 2 "" H 6200 1000 50  0001 C CNN
+F 3 "" H 6200 1000 50  0001 C CNN
+	1    6200 1000
+	1    0    0    -1  
+$EndComp
+Text Label 9350 1100 2    50   ~ 0
++3V3
+Text Label 10450 1100 2    50   ~ 0
++3V3
+Wire Wire Line
+	5950 1200 6300 1200
+Text Label 1550 1100 0    50   ~ 0
+VBUS
 $EndSCHEMATC
