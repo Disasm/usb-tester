@@ -632,8 +632,6 @@ F 3 "~" H 5950 1350 50  0001 C CNN
 	1    5950 1350
 	-1   0    0    1   
 $EndComp
-Text Label 7000 1300 0    50   ~ 0
-PWR_FAULT
 Text Label 7000 1100 0    50   ~ 0
 T_VCC_SRC
 Wire Wire Line
@@ -739,4 +737,20 @@ Wire Wire Line
 	5950 1200 6300 1200
 Text Label 1550 1100 0    50   ~ 0
 VBUS
+$Comp
+L power:PWR_FLAG #FLG0101
+U 1 1 5EC7CCD7
+P 8950 1000
+F 0 "#FLG0101" H 8950 1075 50  0001 C CNN
+F 1 "PWR_FLAG" H 8950 1173 50  0000 C CNN
+F 2 "" H 8950 1000 50  0001 C CNN
+F 3 "~" H 8950 1000 50  0001 C CNN
+	1    8950 1000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8950 1000 8950 1100
+Wire Wire Line
+	8950 1100 9350 1100
+NoConn ~ 7000 1300
 $EndSCHEMATC
