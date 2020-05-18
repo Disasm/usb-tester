@@ -91,7 +91,7 @@ U 1 1 5E458FD1
 P 2550 3750
 F 0 "J2" H 2600 4167 50  0000 C CNN
 F 1 "Target 0" H 2600 4076 50  0000 C CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_2x05_P2.54mm_Vertical" H 2550 3750 50  0001 C CNN
+F 2 "unsorted:PinSocket_2x05_P2.54mm_Vertical_Reversed" H 2550 3750 50  0001 C CNN
 F 3 "~" H 2550 3750 50  0001 C CNN
 	1    2550 3750
 	1    0    0    -1  
@@ -258,7 +258,7 @@ U 1 1 5E499E97
 P 2550 4750
 F 0 "J3" H 2600 5167 50  0000 C CNN
 F 1 "Target 1" H 2600 5076 50  0000 C CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_2x05_P2.54mm_Vertical" H 2550 4750 50  0001 C CNN
+F 2 "unsorted:PinSocket_2x05_P2.54mm_Vertical_Reversed" H 2550 4750 50  0001 C CNN
 F 3 "~" H 2550 4750 50  0001 C CNN
 	1    2550 4750
 	1    0    0    -1  
@@ -269,7 +269,7 @@ U 1 1 5E49D2DA
 P 2550 5750
 F 0 "J4" H 2600 6167 50  0000 C CNN
 F 1 "Target 2" H 2600 6076 50  0000 C CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_2x05_P2.54mm_Vertical" H 2550 5750 50  0001 C CNN
+F 2 "unsorted:PinSocket_2x05_P2.54mm_Vertical_Reversed" H 2550 5750 50  0001 C CNN
 F 3 "~" H 2550 5750 50  0001 C CNN
 	1    2550 5750
 	1    0    0    -1  
@@ -280,7 +280,7 @@ U 1 1 5E49F210
 P 2550 6750
 F 0 "J5" H 2600 7167 50  0000 C CNN
 F 1 "Target 3" H 2600 7076 50  0000 C CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_2x05_P2.54mm_Vertical" H 2550 6750 50  0001 C CNN
+F 2 "unsorted:PinSocket_2x05_P2.54mm_Vertical_Reversed" H 2550 6750 50  0001 C CNN
 F 3 "~" H 2550 6750 50  0001 C CNN
 	1    2550 6750
 	1    0    0    -1  
@@ -500,7 +500,7 @@ U 1 1 5E8DEF66
 P 4050 3750
 F 0 "J6" H 4100 4167 50  0000 C CNN
 F 1 "Target 4" H 4100 4076 50  0000 C CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_2x05_P2.54mm_Vertical" H 4050 3750 50  0001 C CNN
+F 2 "unsorted:PinSocket_2x05_P2.54mm_Vertical_Reversed" H 4050 3750 50  0001 C CNN
 F 3 "~" H 4050 3750 50  0001 C CNN
 	1    4050 3750
 	1    0    0    -1  
@@ -525,7 +525,7 @@ U 1 1 5E8DEF77
 P 4050 4750
 F 0 "J7" H 4100 5167 50  0000 C CNN
 F 1 "Target 5" H 4100 5076 50  0000 C CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_2x05_P2.54mm_Vertical" H 4050 4750 50  0001 C CNN
+F 2 "unsorted:PinSocket_2x05_P2.54mm_Vertical_Reversed" H 4050 4750 50  0001 C CNN
 F 3 "~" H 4050 4750 50  0001 C CNN
 	1    4050 4750
 	1    0    0    -1  
@@ -536,7 +536,7 @@ U 1 1 5E8DEF81
 P 4050 5750
 F 0 "J8" H 4100 6167 50  0000 C CNN
 F 1 "Target 6" H 4100 6076 50  0000 C CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_2x05_P2.54mm_Vertical" H 4050 5750 50  0001 C CNN
+F 2 "unsorted:PinSocket_2x05_P2.54mm_Vertical_Reversed" H 4050 5750 50  0001 C CNN
 F 3 "~" H 4050 5750 50  0001 C CNN
 	1    4050 5750
 	1    0    0    -1  
@@ -547,7 +547,7 @@ U 1 1 5E8DEF8B
 P 4050 6750
 F 0 "J9" H 4100 7167 50  0000 C CNN
 F 1 "Target 7" H 4100 7076 50  0000 C CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_2x05_P2.54mm_Vertical" H 4050 6750 50  0001 C CNN
+F 2 "unsorted:PinSocket_2x05_P2.54mm_Vertical_Reversed" H 4050 6750 50  0001 C CNN
 F 3 "~" H 4050 6750 50  0001 C CNN
 	1    4050 6750
 	1    0    0    -1  
