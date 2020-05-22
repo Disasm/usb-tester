@@ -1,9 +1,11 @@
 mod device;
+mod stboot;
 
 use libusb::Context;
 use crate::device::open_device;
 use usb_switch_common::{Selection, ResetStatus, Boot0Status};
 use std::str::FromStr;
+use crate::stboot::Bootloader;
 
 
 #[derive(Debug)]
@@ -78,13 +80,32 @@ fn main() {
         }
     };
 
-    let selection = match dev.get_selection() {
+    let mut selection = match dev.get_selection() {
         Ok(selection) => selection,
         Err(err) => {
             println!("Failed to get current selection: {}", err);
             return;
         }
     };
+
+    selection.set_boot0(Boot0Status::Asserted).set_reset(ResetStatus::Asserted);
+    if let Err(err) = dev.select(selection) {
+        println!("Failed to select target: {}", err);
+        return;
+    }
+
+    selection.set_reset(ResetStatus::Deasserted);
+    if let Err(err) = dev.select(selection) {
+        println!("Failed to select target: {}", err);
+        return;
+    }
+
+    let serial = serialport::open(&dev.serial_path).unwrap();
+
+    let mut bootloader = Bootloader::new(serial);
+    bootloader.init().expect("initialize the bootloader");
+    bootloader.cmd_get().unwrap();
+    bootloader.get_device_id().unwrap();
 
     let new_selection = options.apply(selection);
     if new_selection != selection {
