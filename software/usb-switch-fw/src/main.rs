@@ -56,7 +56,7 @@ fn main() -> ! {
     let usb_bus = UsbBus::new(usb);
 
     let mut serial = SerialPort::new(&usb_bus);
-    let mut control = ControlClass::new(&usb_bus, 1);
+    let mut control = ControlClass::new(&usb_bus, 2);
 
     let mut usb_dev = UsbDeviceBuilder::new(&usb_bus, UsbVidPid(USB_DEVICE_VID, USB_DEVICE_PID))
         .manufacturer("Fake company")
@@ -75,6 +75,7 @@ fn main() -> ! {
     let mut pin_boot0 = gpioa.pa1.into_push_pull_output_with_state(&mut gpioa.crl, State::Low);
     let mut pin_usben = gpioa.pa4.into_push_pull_output_with_state(&mut gpioa.crl, State::High);
     let mut pin_pwren = gpioa.pa5.into_push_pull_output_with_state(&mut gpioa.crl, State::Low);
+    let mut pin_sel0 = gpioa.pa6.into_push_pull_output_with_state(&mut gpioa.crl, State::Low);
 
     let mut tx_byte = 0;
     let mut tx_pending = false;
@@ -122,6 +123,16 @@ fn main() -> ! {
         let selection = control.selection();
         if selection != last_selection {
             last_selection = selection;
+
+            match selection.channel() {
+                0 => {
+                    pin_sel0.set_low().ok();
+                }
+                1 => {
+                    pin_sel0.set_high().ok();
+                }
+                _ => {}
+            }
 
             match selection.boot0() {
                 Boot0Status::Asserted => pin_boot0.set_high().ok(),
