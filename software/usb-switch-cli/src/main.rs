@@ -2,10 +2,12 @@ mod device;
 mod stboot;
 
 use libusb::Context;
-use crate::device::open_device;
+use crate::device::{open_device, DeviceHandles};
 use usb_switch_common::{Selection, ResetStatus, Boot0Status};
 use std::str::FromStr;
 use crate::stboot::Bootloader;
+use std::time::Duration;
+use std::thread::sleep;
 
 
 #[derive(Debug)]
@@ -67,19 +69,7 @@ impl Options {
 }
 
 
-fn main() {
-    let options = Options::from_args();
-
-    let ctx = Context::new().expect("create libusb context");
-
-    let mut dev = match open_device(&ctx) {
-        Ok(d) => d,
-        Err(err) => {
-            println!("Did not find a usb-switch device. Make sure the device is correctly programmed and plugged in. Last error: {}", err);
-            return;
-        }
-    };
-
+fn read_device_id(dev: &mut DeviceHandles, channel: Option<u8>) {
     let mut selection = match dev.get_selection() {
         Ok(selection) => selection,
         Err(err) => {
@@ -87,6 +77,28 @@ fn main() {
             return;
         }
     };
+
+    selection.set_reset(ResetStatus::Asserted).set_power_enabled(false).set_usb_enabled(false);
+    if let Err(err) = dev.select(selection) {
+        println!("Can't poweroff target: {}", err);
+        return;
+    }
+
+    if let Some(channel) = channel {
+        selection.set_channel(channel);
+        if let Err(err) = dev.select(selection) {
+            println!("Can't switch target: {}", err);
+            return;
+        }
+    }
+
+    sleep(Duration::from_millis(500));
+
+    selection.set_power_enabled(true);
+    if let Err(err) = dev.select(selection) {
+        println!("Can't poweron target: {}", err);
+        return;
+    }
 
     selection.set_boot0(Boot0Status::Asserted).set_reset(ResetStatus::Asserted);
     if let Err(err) = dev.select(selection) {
@@ -100,12 +112,39 @@ fn main() {
         return;
     }
 
+    sleep(Duration::from_millis(500));
+
     let serial = serialport::open(&dev.serial_path).unwrap();
 
     let mut bootloader = Bootloader::new(serial);
     bootloader.init().expect("initialize the bootloader");
     bootloader.cmd_get().unwrap();
     bootloader.get_device_id().unwrap();
+}
+
+
+fn main() {
+    let options = Options::from_args();
+
+    let ctx = Context::new().expect("create libusb context");
+
+    let mut dev = match open_device(&ctx) {
+        Ok(d) => d,
+        Err(err) => {
+            println!("Did not find a usb-switch device. Make sure the device is correctly programmed and plugged in. Last error: {}", err);
+            return;
+        }
+    };
+
+    let selection = match dev.get_selection() {
+        Ok(selection) => selection,
+        Err(err) => {
+            println!("Failed to get current selection: {}", err);
+            return;
+        }
+    };
+
+    read_device_id(&mut dev, options.channel);
 
     let new_selection = options.apply(selection);
     if new_selection != selection {
