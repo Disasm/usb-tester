@@ -141,13 +141,25 @@ fn main() -> ! {
             }
 
             match selection.boot0() {
-                Boot0Status::Asserted => pin_boot0.set_high().ok(),
-                Boot0Status::Deasserted => pin_boot0.set_low().ok(),
+                Boot0Status::Asserted => {
+                    if selection.power_enabled() {
+                        pin_boot0.set_high().ok();
+                    }
+                },
+                Boot0Status::Deasserted => {
+                    pin_boot0.set_low().ok();
+                },
             };
 
             match selection.reset() {
-                ResetStatus::Asserted => pin_nrst.set_low().ok(),
-                ResetStatus::Deasserted => pin_nrst.set_high().ok(),
+                ResetStatus::Asserted => {
+                    pin_nrst.set_low().ok();
+                },
+                ResetStatus::Deasserted => {
+                    if selection.power_enabled() {
+                        pin_nrst.set_high().ok();
+                    }
+                },
             };
 
             match selection.power_enabled() {
