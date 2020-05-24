@@ -13,7 +13,7 @@ use usb_device::prelude::*;
 use usbd_serial::{SerialPort, USB_CLASS_CDC};
 use stm32f1xx_hal::serial::{Serial, Config};
 use control::ControlClass;
-use usb_switch_common::{USB_DEVICE_VID, USB_DEVICE_PID, Boot0Status, ResetStatus};
+use usb_switch_common::{USB_DEVICE_VID, USB_DEVICE_PID, Boot0Status, ResetStatus, Selection};
 use stm32f1xx_hal::gpio::State;
 
 
@@ -40,6 +40,18 @@ fn main() -> ! {
 
     let mut gpioa = dp.GPIOA.split(&mut rcc.apb2);
 
+    let mut pin_nrst = gpioa.pa0.into_push_pull_output_with_state(&mut gpioa.crl, State::Low);
+    let mut pin_boot0 = gpioa.pa1.into_push_pull_output_with_state(&mut gpioa.crl, State::Low);
+    let mut pin_usben = gpioa.pa4.into_push_pull_output_with_state(&mut gpioa.crl, State::High);
+    let mut pin_pwren = gpioa.pa5.into_push_pull_output_with_state(&mut gpioa.crl, State::Low);
+    let mut pin_sel0 = gpioa.pa6.into_push_pull_output_with_state(&mut gpioa.crl, State::Low);
+
+    let mut initial_selection = Selection(0);
+    initial_selection.set_power_enabled(false);
+    initial_selection.set_usb_enabled(false);
+    initial_selection.set_reset(ResetStatus::Asserted);
+    initial_selection.set_boot0(Boot0Status::Deasserted);
+
     // BluePill board has a pull-up resistor on the D+ line.
     // Pull the D+ pin down to send a RESET condition to the USB bus.
     // This forced reset is needed only for development, without it host
@@ -56,7 +68,7 @@ fn main() -> ! {
     let usb_bus = UsbBus::new(usb);
 
     let mut serial = SerialPort::new(&usb_bus);
-    let mut control = ControlClass::new(&usb_bus, 2);
+    let mut control = ControlClass::new(&usb_bus, 2, initial_selection);
 
     let mut usb_dev = UsbDeviceBuilder::new(&usb_bus, UsbVidPid(USB_DEVICE_VID, USB_DEVICE_PID))
         .manufacturer("Fake company")
@@ -70,12 +82,6 @@ fn main() -> ! {
     let rx = gpioa.pa3.into_floating_input(&mut gpioa.crl);
     let config = Config::default().baudrate(115_200.bps()).parity_even();
     let mut uart = Serial::usart2(dp.USART2, (tx, rx), &mut afio.mapr, config, clocks, &mut rcc.apb1);
-
-    let mut pin_nrst = gpioa.pa0.into_open_drain_output_with_state(&mut gpioa.crl, State::High);
-    let mut pin_boot0 = gpioa.pa1.into_push_pull_output_with_state(&mut gpioa.crl, State::Low);
-    let mut pin_usben = gpioa.pa4.into_push_pull_output_with_state(&mut gpioa.crl, State::High);
-    let mut pin_pwren = gpioa.pa5.into_push_pull_output_with_state(&mut gpioa.crl, State::Low);
-    let mut pin_sel0 = gpioa.pa6.into_push_pull_output_with_state(&mut gpioa.crl, State::Low);
 
     let mut tx_byte = 0;
     let mut tx_pending = false;

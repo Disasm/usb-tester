@@ -11,11 +11,11 @@ pub struct ControlClass<B: UsbBus> {
 }
 
 impl<B: UsbBus> ControlClass<B> {
-    pub fn new(alloc: &UsbBusAllocator<B>, channel_count: u8) -> ControlClass<B> {
+    pub fn new(alloc: &UsbBusAllocator<B>, channel_count: u8, selection: Selection) -> ControlClass<B> {
         ControlClass {
             interface: alloc.interface(),
             channel_count,
-            selection: Selection(0),
+            selection,
             _marker: PhantomData
         }
     }
