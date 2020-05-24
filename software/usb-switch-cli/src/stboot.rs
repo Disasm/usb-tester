@@ -16,12 +16,25 @@ enum CommandResult {
 
 pub struct Bootloader {
     serial: Box<dyn SerialPort>,
+    supported_commands: Vec<u8>,
 }
 
 impl Bootloader {
     pub fn new(serial: Box<dyn SerialPort>) -> Self {
         Self {
-            serial
+            serial,
+            supported_commands: vec![0x00]
+        }
+    }
+
+    fn check_suppored_command(&self, command: u8) -> io::Result<()> {
+        if self.supported_commands.iter().find(|v| **v == command).is_some() {
+            Ok(())
+        } else {
+            Err(Error::new(
+                ErrorKind::Other,
+                format!("Unsupported command: 0x{:02x}", command)
+            ))
         }
     }
 
@@ -81,14 +94,15 @@ impl Bootloader {
         let mut buf = vec![0; len as usize + 1];
         self.serial.read_exact(&mut buf)?;
         self.check_result()?;
-        for b in buf {
-            print!("{:02x} ", b);
-        }
-        println!();
+
+        self.supported_commands.clear();
+        self.supported_commands.extend_from_slice(&buf[1..]);
+
         Ok(())
     }
 
     pub fn get_device_id(&mut self) -> io::Result<u16> {
+        self.check_suppored_command(0x02)?;
         self.send(&[0x02, 0xfd])?;
         let len = self.recv_byte()?;
 
