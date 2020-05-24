@@ -1,6 +1,7 @@
 use std::io::{self, Error, ErrorKind};
 use serialport::{SerialPort, ClearBuffer};
 use std::time::Duration;
+use std::convert::TryInto;
 
 const ACK: u8 = 0x79;
 const NACK: u8 = 0x1F;
@@ -87,17 +88,22 @@ impl Bootloader {
         Ok(())
     }
 
-    pub fn get_device_id(&mut self) -> io::Result<u32> {
+    pub fn get_device_id(&mut self) -> io::Result<u16> {
         self.send(&[0x02, 0xfd])?;
         let len = self.recv_byte()?;
 
         let mut buf = vec![0; len as usize + 1];
         self.serial.read_exact(&mut buf)?;
         self.check_result()?;
-        for b in buf {
-            print!("{:02x} ", b);
+
+        if buf.len() == 2 {
+            let id = u16::from_be_bytes((&buf as &[u8]).try_into().unwrap());
+            Ok(id)
+        } else {
+            Err(Error::new(
+                ErrorKind::InvalidData,
+                "Unsupported response length"
+            ))
         }
-        println!();
-        Ok(0)
     }
 }

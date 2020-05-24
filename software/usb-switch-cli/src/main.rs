@@ -119,7 +119,8 @@ fn read_device_id(dev: &mut DeviceHandles, channel: Option<u8>) {
     let mut bootloader = Bootloader::new(serial);
     bootloader.init().expect("initialize the bootloader");
     bootloader.cmd_get().unwrap();
-    bootloader.get_device_id().unwrap();
+    let id = bootloader.get_device_id().unwrap();
+    println!("device id: 0x{:x}", id);
 }
 
 
