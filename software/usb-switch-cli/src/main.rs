@@ -73,21 +73,21 @@ fn read_device_id(dev: &mut DeviceHandles, channel: Option<u8>) {
     let mut selection = match dev.get_selection() {
         Ok(selection) => selection,
         Err(err) => {
-            println!("Failed to get current selection: {}", err);
+            eprintln!("Failed to get current selection: {}", err);
             return;
         }
     };
 
     selection.set_reset(ResetStatus::Asserted).set_power_enabled(false).set_usb_enabled(false);
     if let Err(err) = dev.select(selection) {
-        println!("Can't poweroff target: {}", err);
+        eprintln!("Can't poweroff target: {}", err);
         return;
     }
 
     if let Some(channel) = channel {
         selection.set_channel(channel);
         if let Err(err) = dev.select(selection) {
-            println!("Can't switch target: {}", err);
+            eprintln!("Can't switch target: {}", err);
             return;
         }
     }
@@ -96,19 +96,19 @@ fn read_device_id(dev: &mut DeviceHandles, channel: Option<u8>) {
 
     selection.set_power_enabled(true);
     if let Err(err) = dev.select(selection) {
-        println!("Can't poweron target: {}", err);
+        eprintln!("Can't poweron target: {}", err);
         return;
     }
 
     selection.set_boot0(Boot0Status::Asserted).set_reset(ResetStatus::Asserted);
     if let Err(err) = dev.select(selection) {
-        println!("Failed to select target: {}", err);
+        eprintln!("Failed to select target: {}", err);
         return;
     }
 
     selection.set_reset(ResetStatus::Deasserted);
     if let Err(err) = dev.select(selection) {
-        println!("Failed to select target: {}", err);
+        eprintln!("Failed to select target: {}", err);
         return;
     }
 
@@ -132,7 +132,7 @@ fn main() {
     let mut dev = match open_device(&ctx) {
         Ok(d) => d,
         Err(err) => {
-            println!("Did not find a usb-switch device. Make sure the device is correctly programmed and plugged in. Last error: {}", err);
+            eprintln!("Did not find a usb-switch device. Make sure the device is correctly programmed and plugged in. Last error: {}", err);
             return;
         }
     };
@@ -140,7 +140,7 @@ fn main() {
     let selection = match dev.get_selection() {
         Ok(selection) => selection,
         Err(err) => {
-            println!("Failed to get current selection: {}", err);
+            eprintln!("Failed to get current selection: {}", err);
             return;
         }
     };
@@ -150,7 +150,7 @@ fn main() {
     let new_selection = options.apply(selection);
     if new_selection != selection {
         if let Err(err) = dev.select(new_selection) {
-            println!("Failed to select target: {}", err);
+            eprintln!("Failed to select target: {}", err);
             return;
         }
     }
